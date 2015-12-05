@@ -1,0 +1,32 @@
+.confirm-box {
+    position: absolute;
+    background: #fff;
+    border:1px solid #169b9b;
+    border-radius: 5px;
+    padding:2px;
+    z-index:99999;
+}
+
+.confirm-box button {
+    margin-left: 2px;
+    border: none;
+    border-radius:2px;
+    padding:3px;
+
+}
+
+.confirm-box .ok {
+    background-color: #006600;
+}
+.confirm-box .ok:hover {
+    background-color: #005580;
+    color:#ffc520;
+}
+
+.confirm-box .cancel {
+    background-color: #c0392b;
+}
+.confirm-box .cancel:hover {
+    background-color: #ffc520;
+    color: #B94A48;
+}

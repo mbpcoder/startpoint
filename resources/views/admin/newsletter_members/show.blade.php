@@ -1,0 +1,1 @@
+D:\MyProject\laravel-jamiat\app/views/newsletter_members/show.blade.php
