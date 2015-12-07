@@ -12,7 +12,9 @@
                 {!! $post->body !!}
             </div>
             <div class="panel-footer">
-                نویسنده: {{$post->user->name}}
+                <p>
+                    نویسنده: {{$post->user->name}}
+                </p>
             </div>
         </div>
 
