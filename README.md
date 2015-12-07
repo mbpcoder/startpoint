@@ -8,5 +8,5 @@ run:
 
     composer update
     php artisan migrate
-    php artisan db:
-    
+    php artisan db:seed
+
