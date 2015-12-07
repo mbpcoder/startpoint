@@ -16,7 +16,7 @@
                 @foreach($posts as $post)
                     <div class="post">
                         <h3>
-                            <a href="#">{{$post->title}}</a>
+                            <a href='{{url("posts/show/$post->id")}}'>{{$post->title}}</a>
                         </h3>
 
                         <p class="lead">
