@@ -7,19 +7,19 @@ class CommentTableSeeder extends Seeder {
 
     public function run()
     {
-        DB::table('comments')->delete();
-
-        \Blog\Comment::create([
+        \Blog\Comment::updateOrCreate([
             'id' => 1,
+            'name' => 'Visitor 1',
             'post_id' => 1,
-            'content' => 'test comment 1',
+            'body' => 'test comment 1',
             'email' => 'a@.test.com',
         ]);
 
-        \Blog\Comment::create([
+        \Blog\Comment::updateOrCreate([
             'id' => 2,
+            'name' => 'Visitor 2',
             'post_id' => 1,
-            'content' => 'test comment 2',
+            'body' => 'test comment 2',
             'email' => 'b@.test.com',
         ]);
     }

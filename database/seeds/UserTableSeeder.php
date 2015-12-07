@@ -7,9 +7,7 @@ class UserTableSeeder extends Seeder {
 
     public function run()
     {
-        DB::table('users')->delete();
-
-        \Blog\User::create([
+        \Blog\User::updateOrCreate([
             'id' => 1,
             'email' => 'admin@blog.com',
             'name' => 'admin',
