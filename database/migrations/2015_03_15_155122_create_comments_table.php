@@ -18,7 +18,7 @@ class CreateCommentsTable extends Migration
             $table->string('name', 100);
             $table->string('email', 50)->unique();
             $table->string('website', 100);
-            $table->text('content');
+            $table->text('body');
             $table->boolean('published')->default(true);
             $table->integer('created_at');
             $table->integer('updated_at');
