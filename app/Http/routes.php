@@ -14,17 +14,7 @@
 // admin
 Route::group(array('namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin_auth'), function () {
     Route::get('/', 'HomeController@index');
-    Route::group(array('prefix' => 'newsletters'), function () {
-        Route::get('weekly', 'NewslettersController@weekly');
-        Route::post('weekly', 'NewslettersController@sendWeekly');
-        Route::post('weeklyTestEmail', 'NewslettersController@weeklyTestEmail');
-
-        Route::get('/', 'NewslettersController@index');
-        Route::post('/', 'NewslettersController@store');
-        Route::any('grid', 'NewslettersController@grid');
-        Route::post('sendTestEmail', 'NewslettersController@sendTestEmail');
-        Route::get('create', 'NewslettersController@create');
-    });
+    // Posts
     Route::group(array('prefix' => 'posts'), function () {
         Route::get('/', 'PostsController@index');
         Route::post('/', 'PostsController@store');
@@ -35,6 +25,25 @@ Route::group(array('namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 
         Route::get('{id}/destroy', 'PostsController@destroy');
         Route::get('create', 'PostsController@create');
     });
+    Route::group(array('prefix' => 'comments'), function () {
+        Route::get('/', 'CommentsController@index');
+        Route::post('grid', 'CommentsController@grid');
+        Route::get('approved/{id}', 'CommentsController@toggleApproved');
+    });
+    // Users
+    Route::group(array('prefix' => 'users'), function () {
+        Route::get('/', 'UsersController@index');
+        Route::post('grid', 'UsersController@grid');
+    });
+    // Newsletters
+    Route::group(array('prefix' => 'newsletters'), function () {
+        Route::get('/', 'NewslettersController@index');
+        Route::post('/', 'NewslettersController@store');
+        Route::any('grid', 'NewslettersController@grid');
+        Route::post('sendTestEmail', 'NewslettersController@sendTestEmail');
+        Route::get('create', 'NewslettersController@create');
+    });
+    // Newsletter Members
     Route::group(array('prefix' => 'newsletter_members'), function () {
         Route::get('/', 'NewsletterMembersController@index');
         Route::post('/', 'NewsletterMembersController@store');
@@ -43,10 +52,6 @@ Route::group(array('namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 
 
         Route::get('active/{code}', 'NewsletterMembersController@active');
         Route::get('deactivate/{code}', 'NewsletterMembersController@deactivate');
-    });
-    Route::group(array('prefix' => 'users'), function () {
-        Route::get('/', 'UsersController@index');
-        Route::post('grid', 'UsersController@grid');
     });
 });
 
