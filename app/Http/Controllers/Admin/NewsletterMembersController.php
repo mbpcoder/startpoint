@@ -61,10 +61,7 @@ class NewsletterMembersController extends Controller
                     }
                 }
             }
-//            \DB::enableQueryLog();
             $total = $query->count();
-//            var_dump(\DB::getQueryLog());
-//            die;
             $query->take($perPage)->skip($from);
 
             $data = $query->get(['newsletter_members.id as newsletter_members.id', 'newsletter_members.email as newsletter_members.email', 'newsletter_members.code as newsletter_members.code', 'newsletter_members.active as newsletter_members.active']);
@@ -140,65 +137,5 @@ class NewsletterMembersController extends Controller
             }
         }
         return Redirect::to('admin/newsletter_members');
-    }
-
-    /**
-     * Display the specified newsletter_members.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        $newsletter_member = Newslettermember::findOrFail($id);
-
-        return View::make('admin.newsletter_members.show', compact('newsletter_members'));
-    }
-
-    /**
-     * Show the form for editing the specified newsletter_members.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        $newsletter_member = Newslettermember::find($id);
-
-        return View::make('admin.newsletter_members.edit', compact('newsletter_members'));
-    }
-
-    /**
-     * Update the specified newsletter_members in storage.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        $newsletter_member = Newslettermember::findOrFail($id);
-
-        $validator = Validator::make($data = Input::all(), Newslettermember::$rules);
-
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator)->withInput();
-        }
-
-        $newsletter_member->update($data);
-
-        return Redirect::route('newsletter_members.index');
-    }
-
-    /**
-     * Remove the specified newsletter_members from storage.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        Newslettermember::destroy($id);
-
-        return Redirect::route('newsletter_members.index');
     }
 }
