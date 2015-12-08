@@ -19,7 +19,7 @@ class CreateCommentsTable extends Migration
             $table->string('email', 50)->unique();
             $table->string('website', 100);
             $table->text('body');
-            $table->boolean('published')->default(true);
+            $table->boolean('approved')->default(false);
             $table->integer('created_at');
             $table->integer('updated_at');
         });
