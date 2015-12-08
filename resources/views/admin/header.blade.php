@@ -23,6 +23,7 @@
                         </ul>
                     </li>
                 </ul>
+                <li><a href="/admin/comments">نظرات</a></li>
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">کاربران <span class="caret"></span></a>
@@ -32,16 +33,6 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">مطالب <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/admin/posts">نمایش</a></li>
-                            <li><a href="/admin/posts/create">ایجاد</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <li><a href="/admin/comments">نظرات</a></li>
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خبرنامه <span class="caret"></span></a>
