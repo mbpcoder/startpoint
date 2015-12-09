@@ -26,6 +26,7 @@ class PostsController extends Controller
         $post = new Post();
         $post->title = $request->get('title');
         $post->body = $request->get('body');
+        $post->user_id = \Auth::id();
         $post->save();
         return redirect('/admin/posts');
     }
