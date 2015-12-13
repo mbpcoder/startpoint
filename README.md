@@ -1,5 +1,17 @@
-# blog
-a personal blog with Laravel 5.1
+Laravel Blog
+============
+
+A Laravel 5.1 blog
+
+## Features
+
+* Fields for title, summary, body, published and keywords
+* Bundled migration for building the database schema
+* powerful admin interface
+* multi category for posts
+* writing posts without publishing
+* newsletters after creating posts
+*
 
 
 # init
