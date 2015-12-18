@@ -11,7 +11,8 @@
 		"phpunit/phpunit": "~4.0",
 		"phpspec/phpspec": "~2.1",
 		"laracasts/generators": "dev-master",
-        "barryvdh/laravel-ide-helper": "~2.0@dev"
+        "barryvdh/laravel-ide-helper": "~2.0@dev",
+		"parsidev/jalali": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

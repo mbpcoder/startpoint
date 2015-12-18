@@ -12,11 +12,9 @@ var elixir = require('laravel-elixir');
  */
 
 elixir.config.sourcemaps = false;
-elixir.config.disableNotifier = true;
 //elixir.config.production = true;
 
 elixir(function(mix) {
     mix.sass('app.scss','public/css/app.css');
     mix.sass('admin.scss','public/css/admin.css');
-    mix.sass('icon.scss','public/css/icon.css');
 });
