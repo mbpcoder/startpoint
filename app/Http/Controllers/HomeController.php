@@ -6,7 +6,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::wherePublished(true)->get();
         return view('index')->with('posts', $posts);
     }
 }
