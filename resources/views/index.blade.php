@@ -79,15 +79,17 @@
                         </div>
                     </div>
                     @endforeach
-                            <!-- Pager -->
-                    <ul class="pager">
-                        <li class="next">
-                            <a href="#">جدید تر &larr;</a>
-                        </li>
-                        <li class="previous">
-                            <a href="#">&rarr; قدیمی تر</a>
-                        </li>
-                    </ul>
+                <div class="text-center">
+                    {!! $posts->render() !!}
+                </div>
+                    <style>
+                        .pagination{
+                            direction: ltr;;
+                        }
+                        .pagination li span,.pagination li a{
+                            float: left;
+                        }
+                    </style>
 
             </div>
 

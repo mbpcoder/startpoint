@@ -6,7 +6,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $posts = Post::wherePublished(true)->get();
+        $posts = Post::wherePublished(true)->paginate(10);
         return view('index')->with('posts', $posts);
     }
 }
