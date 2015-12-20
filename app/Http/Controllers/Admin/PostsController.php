@@ -23,10 +23,15 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required|min:6',
+            'body' => 'required',
+        ], [], \Lang::get('attributes'));
         $post = new Post();
         $post->title = $request->get('title');
         $post->body = $request->get('body');
         $post->user_id = \Auth::id();
+        $post->published = $request->has('published');
         $post->save();
         return redirect('/admin/posts');
     }
@@ -41,9 +46,14 @@ class PostsController extends Controller
 
     public function update($id, Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required|min:6',
+            'body' => 'required',
+        ], [], \Lang::get('attributes'));
         $post = Post::find($id);
         $post->title = $request->get('title');
         $post->body = $request->get('body');
+        $post->published = $request->has('published');
         $post->save();
         return redirect('/admin/posts');
 

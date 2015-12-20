@@ -5,14 +5,18 @@ use Illuminate\Database\Eloquent\Model;
 
 
 /**
- * @property mixed pasoon
+ * @property mixed    pasoon
+ * @property int|null published
+ * @property int|null user_id
+ * @property mixed    body
+ * @property mixed    title
  */
 class Post extends Model
 {
 
     protected $table = 'posts';
 
-    protected $fillable = [];
+    protected $fillable = ['body', 'title', 'published'];
 
     protected $dateFormat = 'U';
 

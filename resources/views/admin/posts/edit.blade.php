@@ -7,16 +7,34 @@
             <input type="hidden" value="put" name="_method">
             <input type="hidden" value="{!! csrf_token() !!}" name="_token">
 
-            <div class="form-group">
-                <label for="Title">عنوان مطلب</label>
-                <input type="text" class="form-control" id="Title" name="title" autofocus value="{{$post->title}}">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="form-group">
+                        <label for="title" class="control-label col-lg-4 required-input">عنوان مطلب</label>
+
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" id="title" name="title" autofocus value="{{old('title', $post->title)}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="published" class="control-label col-lg-4 required-input">منتشر شده</label>
+
+                        <div class="col-lg-8">
+                            @if($post->published)
+                                <input type="checkbox" class="form-control" id="published" name="published" checked>
+                            @else
+                                <input type="checkbox" class="form-control" id="published" name="published">
+                            @endif
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <label for="Body">محتوی</label>
-                <textarea type="text" class="form-control" id="Body" name="body" rows="20">{{$post->body}}</textarea>
+                <textarea type="text" class="form-control" id="Body" name="body" rows="20">{{old('body', $post->body)}}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">ذخیره مطلب</button>
-            <a href="/admin/posts/" class="btn btn-default">لیست مطالب</a>
+            <a href="/admin/posts/" class="btn btn-default">انصراف</a>
         </form>
     </div>
     <script type="text/javascript">
