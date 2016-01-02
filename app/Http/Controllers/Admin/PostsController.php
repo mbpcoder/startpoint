@@ -26,7 +26,7 @@ class PostsController extends Controller
         $this->validate($request, [
             'title' => 'required|min:6',
             'body' => 'required',
-        ], [], \Lang::get('attributes'));
+        ]);
         $post = new Post();
         $post->title = $request->get('title');
         $post->body = $request->get('body');
@@ -49,7 +49,7 @@ class PostsController extends Controller
         $this->validate($request, [
             'title' => 'required|min:6',
             'body' => 'required',
-        ], [], \Lang::get('attributes'));
+        ]);
         $post = Post::find($id);
         $post->title = $request->get('title');
         $post->body = $request->get('body');

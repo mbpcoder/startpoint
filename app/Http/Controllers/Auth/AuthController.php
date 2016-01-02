@@ -54,7 +54,7 @@ class AuthController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
             'mobile' => 'digits:11:',
-        ], [], \Lang::get('attributes'));
+        ]);
     }
 
     /**
@@ -113,7 +113,7 @@ class AuthController extends Controller
     {
         $this->validate($request, [
             $this->loginUsername() => 'required', 'password' => 'required',
-        ],[],\Lang::get('attributes'));
+        ]);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and

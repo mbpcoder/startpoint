@@ -7,7 +7,6 @@
     <link rel="stylesheet" href='{{asset("css/vendors/bootstrap.min.css")}}'/>
     <link rel="stylesheet" href='{{asset("css/vendors/bootstrap-rtl.min.css")}}'/>
     <link rel="stylesheet" href='{{asset("css/vendors/font-awesome.min.css")}}'/>
-    <link rel="stylesheet" href='{{asset("css/icon.css")}}'/>
     <link rel="stylesheet" href='{{asset("css/admin.css")}}'/>
 
     <script src='{{asset("js/vendors/jquery.min.js")}}'></script>

@@ -48,7 +48,7 @@ class PasswordController extends Controller
      */
     public function postEmail(Request $request)
     {
-        $this->validate($request, ['email' => 'required|email'],[],\Lang::get('attributes'));
+        $this->validate($request, ['email' => 'required|email']);
 
         $response = Password::sendResetLink($request->only('email'), function (Message $message) {
             $message->subject($this->getEmailSubject());
@@ -75,7 +75,7 @@ class PasswordController extends Controller
             'token' => 'required',
             'email' => 'required|email',
             'password' => 'required|confirmed|min:6',
-        ],[],\Lang::get('attributes'));
+        ]);
 
         $credentials = $request->only(
             'email', 'password', 'password_confirmation', 'token'
