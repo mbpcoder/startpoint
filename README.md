@@ -1,4 +1,4 @@
-Laravel Blog
+Laravel Blog for developer
 ============
 
 A Laravel 5.1 blog
