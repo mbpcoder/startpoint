@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateCategoriesTable extends Migration
 {
@@ -14,8 +14,10 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 100);
-            $table->integer('order');
+            $table->string('name');
+            $table->string('alias');
+            $table->integer('order')->default(0);
+            $table->integer('user_id');
         });
     }
 

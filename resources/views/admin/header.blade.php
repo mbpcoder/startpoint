@@ -8,21 +8,33 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">{{'وبلاگ'}}</a>
+            <a class="navbar-brand" href="{{url()}}">وبلاگ</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">مطالب <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/admin/posts">نمایش</a></li>
-                            <li><a href="/admin/posts/create">ایجاد</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <li>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">مطالب <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/admin/posts">نمایش</a></li>
+                                <li><a href="/admin/posts/create">ایجاد</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">دسته بندی <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/admin/categories">نمایش</a></li>
+                                <li><a href="/admin/categories/create">ایجاد</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
                 <li><a href="/admin/comments">نظرات</a></li>
                 <ul class="nav navbar-nav">
                     <li class="dropdown">

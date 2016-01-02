@@ -16,7 +16,9 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['name', 'alias', 'order', 'user_id'];
+
+    public $timestamps = false;
 
     protected $dates = [];
 

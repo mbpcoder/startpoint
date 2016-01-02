@@ -25,6 +25,16 @@ Route::group(array('namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 
         Route::get('{id}/destroy', 'PostsController@destroy');
         Route::get('create', 'PostsController@create');
     });
+    // Categories
+    Route::group(array('prefix' => 'categories'), function () {
+        Route::get('/', 'CategoriesController@index');
+        Route::post('grid', 'CategoriesController@grid');
+        Route::get('create', 'CategoriesController@create');
+        Route::post('/', 'CategoriesController@store');
+        Route::get('{id}/edit', 'CategoriesController@edit');
+        Route::put('{id}', 'CategoriesController@update');
+        Route::get('{id}/destroy', 'CategoriesController@destroy');
+    });
     Route::group(array('prefix' => 'comments'), function () {
         Route::get('/', 'CommentsController@index');
         Route::post('grid', 'CommentsController@grid');
@@ -55,7 +65,7 @@ Route::group(array('namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 
     });
 });
 
-Route::get('/', 'HomeController@index');
+Route::get('/{category?}', 'HomeController@index');
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
