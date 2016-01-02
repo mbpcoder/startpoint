@@ -24,9 +24,9 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="">
-                                @foreach(\Blog\Category::all() as $category)
+                                @foreach(\Blog\Category::wherePublished(true)->get() as $category)
                                     <li>
-                                        <a href="#">{{$category->name}}</a>
+                                        <a href="{{$category->alias}}">{{$category->name}}</a>
                                     </li>
                                 @endforeach
                             </ul>

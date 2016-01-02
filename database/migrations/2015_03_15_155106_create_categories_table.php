@@ -16,6 +16,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('alias');
+            $table->boolean('published')->default(true);
             $table->integer('order')->default(0);
             $table->integer('user_id');
         });
