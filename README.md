@@ -5,11 +5,11 @@ A Laravel 5.1 blog
 
 ## Features
 
-* Fields for title, summary, body, published and keywords
+* alias, published, multi category for posts
+* posts pagination
+* alias, published and order for categories
 * Bundled migration for building the database schema
 * powerful admin interface
-* multi category for posts
-* writing posts without publishing
 * newsletters after creating posts
 *
 
