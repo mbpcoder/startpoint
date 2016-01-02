@@ -104,6 +104,7 @@ class CategoriesController extends Controller
         $data = $request->all();
         $data['alias'] = (empty($data['alias'])) ? str_replace(" ", "-", $data['name']) : str_replace(" ", "-", $data['alias']);;
         $data['user_id'] = \Auth::id();
+        $data['published'] = $request->has('published');
         Category::create($data);
         return redirect('/admin/categories');
     }
@@ -136,6 +137,7 @@ class CategoriesController extends Controller
         $data = $request->all();
         $data['alias'] = (empty($data['alias'])) ? str_replace(" ", "-", $data['name']) : str_replace(" ", "-", $data['alias']);;
         $data['user_id'] = \Auth::id();
+        $data['published'] = $request->has('published');
         $category->update($data);
         return redirect('/admin/categories');
 

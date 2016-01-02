@@ -34,6 +34,13 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="published" class="control-label col-lg-4 required-input">منتشر شده</label>
+
+                        <div class="col-lg-8">
+                            <input type="checkbox" class="form-control" id="published" name="published">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="order" class="control-label col-lg-4 required-input">ترتیب</label>
 
                         <div class="col-lg-8">

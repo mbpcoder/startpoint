@@ -29,10 +29,28 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="alias" class="control-label col-lg-4 required-input">نام مستعار</label>
+
+                        <div class="col-lg-8">
+                            <input type="text" value="{{old('alias')}}" class="form-control" id="alias" name="alias">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="published" class="control-label col-lg-4 required-input">منتشر شده</label>
 
                         <div class="col-lg-8">
                             <input type="checkbox" class="form-control" id="published" name="published">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="categories" class="control-label col-lg-4 required-input">دسته بندی ها</label>
+
+                        <div class="col-lg-8">
+                            <select multiple class="form-control" id="categories" name="categories[]">
+                                @foreach(\Blog\Category::all() as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>
