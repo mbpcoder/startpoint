@@ -102,7 +102,7 @@ class CategoriesController extends Controller
             'name' => 'required|min:3',
         ]);
         $data = $request->all();
-        $data['alias'] = (empty($data['alias'])) ? str_replace(" ", "-", $data['name']) : $data['alias'];
+        $data['alias'] = (empty($data['alias'])) ? str_replace(" ", "-", $data['name']) : str_replace(" ", "-", $data['alias']);;
         $data['user_id'] = \Auth::id();
         Category::create($data);
         return redirect('/admin/categories');
@@ -134,7 +134,7 @@ class CategoriesController extends Controller
 
         $category = Category::find($id);
         $data = $request->all();
-        $data['alias'] = (empty($data['alias'])) ? str_replace(" ", "-", $data['name']) : $data['alias'];
+        $data['alias'] = (empty($data['alias'])) ? str_replace(" ", "-", $data['name']) : str_replace(" ", "-", $data['alias']);;
         $data['user_id'] = \Auth::id();
         $category->update($data);
         return redirect('/admin/categories');
