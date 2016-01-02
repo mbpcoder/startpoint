@@ -1,5 +1,6 @@
 <?php namespace Blog\Http\Controllers\Admin;
 
+use Blog\CategoryPost;
 use Blog\Http\Controllers\Controller;
 use Blog\Post;
 use Illuminate\Http\Request;
@@ -27,12 +28,19 @@ class PostsController extends Controller
             'title' => 'required|min:6',
             'body' => 'required',
         ]);
-        $post = new Post();
-        $post->title = $request->get('title');
-        $post->body = $request->get('body');
-        $post->user_id = \Auth::id();
-        $post->published = $request->has('published');
-        $post->save();
+        $data = $request->all();
+        $data['alias'] = (empty($data['alias'])) ? str_replace(" ", "-", $data['title']) : str_replace(" ", "-", $data['alias']);;
+        $data['user_id'] = \Auth::id();
+        $data['published'] = $request->has('published');
+        $post = Post::create($data);
+        $category_posts = [];
+        foreach ($request->get('categories') as $category_id) {
+            $category_posts[] = [
+                'post_id' => $post->id,
+                'category_id' => $category_id,
+            ];
+        }
+        CategoryPost::insert($category_posts);
         return redirect('/admin/posts');
     }
 
@@ -41,6 +49,7 @@ class PostsController extends Controller
         $post = Post::find($id);
         return view('admin.posts.edit')->with([
             'post' => $post,
+            'categories_post' => CategoryPost::wherePostId($post->id)->lists('category_id')->toArray(),
         ]);
     }
 
@@ -50,13 +59,24 @@ class PostsController extends Controller
             'title' => 'required|min:6',
             'body' => 'required',
         ]);
+        $data = $request->all();
+        $data['alias'] = (empty($data['alias'])) ? str_replace(" ", "-", $data['title']) : str_replace(" ", "-", $data['alias']);
+        $data['user_id'] = \Auth::id();
+        $data['published'] = $request->has('published');
         $post = Post::find($id);
-        $post->title = $request->get('title');
-        $post->body = $request->get('body');
-        $post->published = $request->has('published');
-        $post->save();
+        $post->update($data);
+        CategoryPost::wherePostId($post->id)->delete();
+        $category_posts = [];
+        if ($request->has('categories')) {
+            foreach ($request->get('categories') as $category_id) {
+                $category_posts[] = [
+                    'post_id' => $post->id,
+                    'category_id' => $category_id,
+                ];
+            }
+        }
+        CategoryPost::insert($category_posts);
         return redirect('/admin/posts');
-
     }
 
     public function show($id = 0)

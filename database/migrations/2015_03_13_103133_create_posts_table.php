@@ -16,6 +16,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('title', 500);
+            $table->string('alias', 500);
             $table->text('body');
             $table->string('summery', 1000)->nullable();
             $table->integer('order')->default(0);

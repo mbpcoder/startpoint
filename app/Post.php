@@ -16,7 +16,7 @@ class Post extends Model
 
     protected $table = 'posts';
 
-    protected $fillable = ['body', 'title', 'published'];
+    protected $fillable = ['body', 'title', 'published', 'alias', 'user_id'];
 
     protected $dateFormat = 'U';
 
@@ -50,6 +50,6 @@ class Post extends Model
 
     public function categories()
     {
-        return $this->belongsToMany('Blog\Category', 'cat_post');
+        return $this->belongsToMany('Blog\Category', 'category_post');
     }
 }

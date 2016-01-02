@@ -4,9 +4,11 @@ namespace Blog;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category_Post extends Model
+class CategoryPost extends Model
 {
     protected $table = 'category_post';
+
+    public $timestamps = false;
 
     protected $dates = [];
 
