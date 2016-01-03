@@ -60,6 +60,18 @@
             'filter': true,
         });
         categoryGridview.addColumn({
+            'name': 'published',
+            'caption': 'منتشر شده',
+            'type': ['enum'],
+            'typeData': [{name: 'خیر', value: 0}, {name: 'بله', value: 1}],
+            'visible': true,
+            'sort': true,
+            'filter': true,
+            'beforeRender': function (data) {
+                return (data == 0) ? 'خیر' : 'بله'
+            },
+        });
+        categoryGridview.addColumn({
             'name': 'action',
             'caption': 'عملیات',
             'type': ['html'],

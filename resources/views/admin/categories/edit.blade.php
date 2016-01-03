@@ -38,7 +38,7 @@
 
                         <div class="col-lg-8">
                             @if($category->published)
-                                <input checked type="checkbox" class="form-control" id="published" name="published">
+                                <input checked type="checkbox" class="form-control" id="published">
                             @else
                                 <input type="checkbox" class="form-control" id="published" name="published">
                             @endif

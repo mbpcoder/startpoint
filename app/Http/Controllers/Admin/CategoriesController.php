@@ -27,7 +27,7 @@ class CategoriesController extends Controller
             $perPage = $req->page->perPage;
             $from = $perPage * (($req->page->currentPage) - 1);
 
-            $query = Category::select(['id', 'name', 'alias', 'order']);
+            $query = Category::select(['id', 'name', 'alias', 'order','published']);
 
             if (!is_null($req->sort)) {
                 foreach ($req->sort as $key => $value) {
