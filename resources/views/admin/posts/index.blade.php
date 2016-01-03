@@ -58,6 +58,28 @@
             }
         });
         postGridview.addColumn({
+            'name': 'users.name',
+            'caption': 'کاربر',
+            'type': ['string'],
+            'typeData': undefined,
+            'visible': true,
+            'sort': true,
+            'filter': true,
+        });
+        postGridview.addColumn({
+            'name': 'posts.published',
+            'caption': 'منتشر شده',
+            'type': ['enum'],
+            'typeData': [{name: 'خیر', value: 0}, {name: 'بله', value: 1}],
+            'visible': true,
+            'sort': true,
+            'filter': true,
+            'beforeRender': function (data) {
+                console.log(data)
+                return (data == 0) ? 'خیر' : 'بله';
+            },
+        });
+        postGridview.addColumn({
             'name': 'posts.created_at',
             'caption': 'تاریخ انتشار',
             'type': ['date'],

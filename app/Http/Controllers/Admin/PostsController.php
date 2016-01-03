@@ -98,8 +98,7 @@ class PostsController extends Controller
             $perPage = $req->page->perPage;
             $from = $perPage * (($req->page->currentPage) - 1);
 
-            $query = Post::select(['posts.id as posts.id', 'posts.title as posts.title', 'posts.created_at as posts.created_at', 'posts.updated_at as posts.updated_at']);
-
+            $query = Post::join('users', 'user_id', '=', 'users.id')->select(['posts.id as posts.id', 'users.name as users.name', 'posts.title as posts.title', 'posts.published as posts.published', 'posts.created_at as posts.created_at', 'posts.updated_at as posts.updated_at']);
             if (!is_null($req->sort)) {
                 foreach ($req->sort as $key => $value) {
                     $query->orderBy($key, $value);

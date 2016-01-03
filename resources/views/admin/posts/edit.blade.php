@@ -28,7 +28,7 @@
 
                         <div class="col-lg-8">
                             @if($post->published)
-                                <input type="checkbox" class="form-control" id="published" name="published" checked>
+                                <input checked type="checkbox" class="form-control" id="published">
                             @else
                                 <input type="checkbox" class="form-control" id="published" name="published">
                             @endif
