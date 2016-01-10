@@ -13,6 +13,9 @@ A Laravel 5.1 blog
 * newsletters after creating posts
 *
 
+# install from composer 
+    composer create-project mahdi-bagheri/blog MyBlog
+
 
 # init
     create .env config file from .env.example and change default values.
