@@ -132,7 +132,7 @@
             'name': 'action',
             'caption': 'عملیات',
             'type': ['html'],
-            'typeData': '<a title="فعال کردن خبرنامه" href="/admin/newsletter_members/active/{newsletter_members.code}" class="btn btn-success btn-xs"><i class="fa fa-unlock"></i></a> <a title="غیر فعال کردن خبرنامه" href="/admin/newsletter_members/deactivate/{newsletter_members.code}" class="btn btn-danger btn-xs"><i class="fa fa-lock"></i></a>',
+            'typeData': '<a title="فعال کردن خبرنامه" href="/admin/newsletter_members/active/{newsletter_members.code}" class="btn btn-success btn-xs">فعال کردن</a> <a title="غیر فعال کردن خبرنامه" href="/admin/newsletter_members/deactivate/{newsletter_members.code}" class="btn btn-danger btn-xs">غیر فعال کردن</a>',
             'visible': true,
             'sort': false,
             'filter': false,

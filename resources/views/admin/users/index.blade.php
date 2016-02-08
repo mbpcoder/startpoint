@@ -179,7 +179,7 @@
             'name': 'action',
             'caption': 'عملیات',
             'type': ['html'],
-            'typeData': '<a href="admin/users/{users.id}/edit" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a> <a href="admin/users/{users.id}/destroy" class="delete btn btn-danger btn-xs"><i class="fa fa-times"></i></a>',
+            'typeData': '<a href="admin/users/{users.id}/edit" class="btn btn-info btn-xs">ویرایش</a> <a href="admin/users/{users.id}/destroy" class="delete btn btn-danger btn-xs">حذف</a>',
             'visible': true,
             'sort': false,
             'filter': false,

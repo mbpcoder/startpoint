@@ -5,6 +5,7 @@ namespace Blog\Http\Controllers\Admin;
 use Blog\Http\Controllers\Controller;
 use Blog\Http\Requests;
 use Blog\User;
+use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
@@ -18,10 +19,10 @@ class UsersController extends Controller
         return view('admin.users.index');
     }
 
-    public function grid()
+    public function grid(Request $request)
     {
-        if (\Input::ajax() && \Input::exists('req')) {
-            $req = json_decode(\Input::get('req'));
+        if ($request->ajax() && $request->exists('req')) {
+            $req = json_decode($request->get('req'));
             $perPage = $req->page->perPage;
             $from = $perPage * (($req->page->currentPage) - 1);
 

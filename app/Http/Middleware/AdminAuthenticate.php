@@ -16,7 +16,6 @@ class AdminAuthenticate
      * Create a new filter instance.
      *
      * @param  Guard $auth
-     * @return void
      */
     public function __construct(Guard $auth)
     {
@@ -36,7 +35,7 @@ class AdminAuthenticate
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest('auth/login');
+                return redirect()->guest('admin/login');
             }
         }
         return $next($request);

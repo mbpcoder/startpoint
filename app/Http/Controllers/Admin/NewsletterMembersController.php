@@ -4,6 +4,7 @@ namespace Blog\Http\Controllers\Admin;
 
 use Blog\Http\Controllers\Controller;
 use Blog\NewsletterMember;
+use Illuminate\Http\Request;
 use Input as Input;
 use Redirect as Redirect;
 use Validator as Validator;
@@ -22,10 +23,10 @@ class NewsletterMembersController extends Controller
         return view('admin.newsletter_members.index');
     }
 
-    public function grid()
+    public function grid(Request $request)
     {
-        if (Input::ajax() && Input::exists('req')) {
-            $req = json_decode(Input::get('req'));
+        if ($request->ajax() && $request->exists('req')) {
+            $req = json_decode($request->get('req'));
             $perPage = $req->page->perPage;
             $from = $perPage * (($req->page->currentPage) - 1);
             $query = NewsletterMember::distinct();
@@ -111,11 +112,12 @@ class NewsletterMembersController extends Controller
     /**
      * Store a newly created newslettermembers in storage.
      *
+     * @param Request $request
      * @return Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        $data = Input::get('emails');
+        $data = $request->get('emails');
         $data = str_replace(array("\n", "\r", ','), ' ', $data);
         $emails = explode(' ', $data);
         $emails = array_filter($emails);

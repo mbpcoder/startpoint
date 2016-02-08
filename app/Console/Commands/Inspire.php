@@ -1,4 +1,6 @@
-<?php namespace Blog\Console\Commands;
+<?php
+
+namespace Blog\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
@@ -6,11 +8,11 @@ use Illuminate\Foundation\Inspiring;
 class Inspire extends Command
 {
     /**
-     * The console command name.
+     * The name and signature of the console command.
      *
      * @var string
      */
-    protected $name = 'inspire';
+    protected $signature = 'inspire';
 
     /**
      * The console command description.
@@ -26,6 +28,6 @@ class Inspire extends Command
      */
     public function handle()
     {
-        $this->comment(PHP_EOL . Inspiring::quote() . PHP_EOL);
+        $this->comment(PHP_EOL.Inspiring::quote().PHP_EOL);
     }
 }

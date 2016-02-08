@@ -23,7 +23,7 @@ class CategoriesController extends Controller
     public function grid(Request $request)
     {
         if ($request->ajax() && $request->exists('req')) {
-            $req = json_decode(\Input::get('req'));
+            $req = json_decode($request->get('req'));
             $perPage = $req->page->perPage;
             $from = $perPage * (($req->page->currentPage) - 1);
 

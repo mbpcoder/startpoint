@@ -1,13 +1,19 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+        <title>Be right back.</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
         <style>
+            html, body {
+                height: 100%;
+            }
+
             body {
                 margin: 0;
                 padding: 0;
                 width: 100%;
-                height: 100%;
                 color: #B0BEC5;
                 display: table;
                 font-weight: 100;
