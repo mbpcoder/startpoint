@@ -1,27 +1,37 @@
-## Laravel PHP Framework
+Laravel Blog for developer
+============
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+A Laravel 5.2 blog
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Features
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+* alias, published, multi category for posts
+* posts pagination
+* alias, published and order for categories
+* Bundled migration for building the database schema
+* powerful admin interface
+* newsletters after creating posts
+*
 
-## Official Documentation
+# install via composer 
+    composer create-project mahdi-bagheri/blog MyBlog
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Contributing
+# init
+    create .env config file from .env.example and change default values.
+run:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+    composer update
+    php artisan migrate
+    php artisan db:seed
 
-## Security Vulnerabilities
+Some Screenshot
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+![alt tag](https://cloud.githubusercontent.com/assets/3877538/12076259/fb221706-b1b8-11e5-992f-56b42f51b361.PNG)
 
-### License
+![alt tag](https://cloud.githubusercontent.com/assets/3877538/12076260/01a0ee0e-b1b9-11e5-8e4b-0b50d675cfe5.PNG)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+![alt tag](https://cloud.githubusercontent.com/assets/3877538/12076261/058278e4-b1b9-11e5-868c-9f06b311a7aa.PNG)
+
+![alt tag](https://cloud.githubusercontent.com/assets/3877538/12076262/0a0c0cd6-b1b9-11e5-87a4-efa71c93cba6.PNG)
+
