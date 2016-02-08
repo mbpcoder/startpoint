@@ -64,6 +64,7 @@
                             </ul>
                         </li>
                     </ul>
+                    <li><a href="/admin/logout">خروج</a></li>
                 @else
                     <li><a href="{{url('/admin/login')}}">ورود</a></li>
                 @endif
