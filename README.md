@@ -1,17 +1,17 @@
-Laravel Blog for developer
+Start Point For Creating Apps with Laravel
 ============
 
-A Laravel 5.2 blog
+A Laravel 5.2 Project
 
 ## Features
-
-* alias, published, multi category for posts
-* posts pagination
-* alias, published and order for categories
-* Bundled migration for building the database schema
-* powerful admin interface
-* newsletters after creating posts
-*
+* Blog
+    * alias, published, multi category for posts
+    * posts pagination
+    * alias, published and order for categories
+    * Bundled migration for building the database schema
+* Others
+    * newsletters
+    * powerful admin interface
 
 # install via composer 
     composer create-project mahdi-bagheri/blog MyBlog
