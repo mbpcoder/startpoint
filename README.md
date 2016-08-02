@@ -14,7 +14,7 @@ A Laravel 5.2 Project
     * powerful admin interface
 
 # install via composer 
-    composer create-project mahdi-bagheri/startpoint App
+    composer create-project mahdi-bagheri/blog App
 
 
 # init
