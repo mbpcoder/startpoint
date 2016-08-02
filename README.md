@@ -1,14 +1,13 @@
 Start Point For Creating Apps with Laravel
 ============
+this is going to be start point for developer and give them some basic infrastructure they need for most of websites. features like authentication, permissions, blog, upload, create static pages, admin interface, notifications, suport systems, newsletter and so on
 
-A Laravel 5.2 Project
-
-## Features
+## Completed Features
 * Blog
     * alias, published, multi category for posts
     * posts pagination
     * alias, published and order for categories
-    * Bundled migration for building the database schema
+    * migration for building the database schema
 * Others
     * newsletters
     * powerful admin interface
