@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog\Console;
+namespace StartPoint\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

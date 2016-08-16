@@ -1,4 +1,4 @@
-<?php namespace Blog;
+<?php namespace StartPoint;
 
 use Illuminate\Database\Eloquent\Model;
 

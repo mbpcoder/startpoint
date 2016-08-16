@@ -1,10 +1,10 @@
 <?php
 
-namespace Blog\Http\Controllers;
+namespace StartPoint\Http\Controllers;
 
-use Blog\Category;
-use Blog\Http\Requests;
-use Blog\Post;
+use StartPoint\Category;
+use StartPoint\Http\Requests;
+use StartPoint\Post;
 
 class HomeController extends Controller
 {

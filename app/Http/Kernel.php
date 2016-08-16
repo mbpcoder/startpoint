@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog\Http;
+namespace StartPoint\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -24,11 +24,11 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \Blog\Http\Middleware\EncryptCookies::class,
+            \StartPoint\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \Blog\Http\Middleware\VerifyCsrfToken::class,
+            \StartPoint\Http\Middleware\VerifyCsrfToken::class,
         ],
 
         'api' => [
@@ -44,10 +44,10 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Blog\Http\Middleware\Authenticate::class,
-		'admin_auth' => \Blog\Http\Middleware\AdminAuthenticate::class,
+        'auth' => \StartPoint\Http\Middleware\Authenticate::class,
+		'admin_auth' => \StartPoint\Http\Middleware\AdminAuthenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \Blog\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \StartPoint\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }

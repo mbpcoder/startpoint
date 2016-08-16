@@ -20,7 +20,7 @@
             "database"
         ],
         "psr-4": {
-            "Blog\\": "app/"
+            "StartPoint\\": "app/"
         }
     },
     "autoload-dev": {

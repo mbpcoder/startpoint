@@ -6,7 +6,7 @@ class CategoryTableSeeder extends Seeder
 {
     public function run()
     {
-        \Blog\Category::updateOrCreate([
+        \StartPoint\Category::updateOrCreate([
             'id' => 1,
             'name' => 'بدون دسته',
             'published' => false,

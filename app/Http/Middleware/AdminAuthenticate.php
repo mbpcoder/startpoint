@@ -1,4 +1,4 @@
-<?php namespace Blog\Http\Middleware;
+<?php namespace StartPoint\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

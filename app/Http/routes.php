@@ -2,8 +2,8 @@
 
 // web
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/{category?}', 'HomeController@index')->where('category', '^(?!admin).*$');
     Route::get('posts/show/{id}', 'PostsController@show');
+    Route::get('/{category?}', 'HomeController@index')->where('category', '^(?!admin).*$');
     // admin
     Route::group(array('namespace' => 'Admin', 'prefix' => 'admin'), function () {
         Route::auth();

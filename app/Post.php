@@ -1,6 +1,6 @@
-<?php namespace Blog;
+<?php namespace StartPoint;
 
-use Blog\Lib\PasoonDate;
+use StartPoint\Lib\PasoonDate;
 use Illuminate\Database\Eloquent\Model;
 
 
@@ -40,16 +40,16 @@ class Post extends Model
 
     public function user()
     {
-        return $this->belongsTo('Blog\User');
+        return $this->belongsTo('StartPoint\User');
     }
 
     public function comments()
     {
-        return $this->hasMany('Blog\Comment');
+        return $this->hasMany('StartPoint\Comment');
     }
 
     public function categories()
     {
-        return $this->belongsToMany('Blog\Category', 'category_post');
+        return $this->belongsToMany('StartPoint\Category', 'category_post');
     }
 }

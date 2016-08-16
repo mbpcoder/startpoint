@@ -1,6 +1,6 @@
-<?php namespace Blog\Http\Controllers\Admin\Auth;
+<?php namespace StartPoint\Http\Controllers\Admin\Auth;
 
-use Blog\Http\Controllers\Controller;
+use StartPoint\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

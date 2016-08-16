@@ -1,8 +1,8 @@
-<?php namespace Blog\Http\Controllers\Admin;
+<?php namespace StartPoint\Http\Controllers\Admin;
 
 
-use Blog\Http\Controllers\Controller;
-use Blog\Newsletter;
+use StartPoint\Http\Controllers\Controller;
+use StartPoint\Newsletter;
 use Illuminate\Http\Request;
 
 class NewslettersController extends Controller

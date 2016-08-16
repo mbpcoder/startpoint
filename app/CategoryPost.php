@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog;
+namespace StartPoint;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -39,7 +39,7 @@
 
                         <div class="col-lg-8">
                             <select multiple class="form-control" id="categories" name="categories[]">
-                                @foreach(\Blog\Category::all() as $category)
+                                @foreach(\StartPoint\Category::all() as $category)
                                     @if(in_array($category->id, $categories_post))
                                         <option selected value="{{$category->id}}">{{$category->name}}</option>
                                     @else

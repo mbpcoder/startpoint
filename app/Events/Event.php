@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog\Events;
+namespace StartPoint\Events;
 
 abstract class Event
 {

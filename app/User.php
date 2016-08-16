@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog;
+namespace StartPoint;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -42,6 +42,6 @@ class User extends Authenticatable
 	
 	public function posts()
     {
-        return $this->hasMany('Blog\Post');
+        return $this->hasMany('StartPoint\Post');
     }
 }

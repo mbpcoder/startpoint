@@ -1,4 +1,4 @@
-<?php namespace Blog;
+<?php namespace StartPoint;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -29,6 +29,6 @@ class Category extends Model
 
     public function posts()
     {
-        return $this->belongsToMany('Blog\Post', 'category_post');
+        return $this->belongsToMany('StartPoint\Post', 'category_post');
     }
 }

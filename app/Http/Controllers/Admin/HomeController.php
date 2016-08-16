@@ -1,9 +1,9 @@
-<?php namespace Blog\Http\Controllers\Admin;
+<?php namespace StartPoint\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
-use Blog\Http\Requests;
-use Blog\Http\Controllers\Controller;
+use StartPoint\Http\Requests;
+use StartPoint\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {

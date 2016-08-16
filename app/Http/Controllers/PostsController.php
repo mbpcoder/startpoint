@@ -1,41 +1,12 @@
-<?php namespace Blog\Http\Controllers;
+<?php namespace StartPoint\Http\Controllers;
 
-use Blog\Http\Requests;
-use Blog\Http\Controllers\Controller;
-use Blog\Post;
+use StartPoint\Http\Requests;
+use StartPoint\Http\Controllers\Controller;
+use StartPoint\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store()
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -47,42 +18,9 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $title = $post->title;
-       return view('posts.view')->with([
+       return view('posts.show')->with([
             'title' => $title,
             'post' => $post,
         ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

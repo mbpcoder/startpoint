@@ -7,7 +7,7 @@ class CommentTableSeeder extends Seeder {
 
     public function run()
     {
-        \Blog\Comment::updateOrCreate([
+        \StartPoint\Comment::updateOrCreate([
             'id' => 1,
             'name' => 'Visitor 1',
             'post_id' => 1,
@@ -15,7 +15,7 @@ class CommentTableSeeder extends Seeder {
             'email' => 'a@.test.com',
         ]);
 
-        \Blog\Comment::updateOrCreate([
+        \StartPoint\Comment::updateOrCreate([
             'id' => 2,
             'name' => 'Visitor 2',
             'post_id' => 1,

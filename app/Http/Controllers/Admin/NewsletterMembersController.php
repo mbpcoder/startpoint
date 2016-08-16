@@ -1,9 +1,9 @@
 <?php
 
-namespace Blog\Http\Controllers\Admin;
+namespace StartPoint\Http\Controllers\Admin;
 
-use Blog\Http\Controllers\Controller;
-use Blog\NewsletterMember;
+use StartPoint\Http\Controllers\Controller;
+use StartPoint\NewsletterMember;
 use Illuminate\Http\Request;
 use Input as Input;
 use Redirect as Redirect;

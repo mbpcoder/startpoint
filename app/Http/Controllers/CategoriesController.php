@@ -1,11 +1,11 @@
 <?php
 
-namespace Blog\Http\Controllers;
+namespace StartPoint\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Blog\Http\Requests;
-use Blog\Http\Controllers\Controller;
+use StartPoint\Http\Requests;
+use StartPoint\Http\Controllers\Controller;
 
 class CategoriesController extends Controller
 {

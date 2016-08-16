@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Blog
+        psr4_prefix: Blog
+        src_path: app

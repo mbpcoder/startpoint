@@ -1,10 +1,10 @@
 <?php
 
-namespace Blog\Http\Controllers\Admin\Auth;
+namespace StartPoint\Http\Controllers\Admin\Auth;
 
-use Blog\User;
+use StartPoint\User;
 use Validator;
-use Blog\Http\Controllers\Controller;
+use StartPoint\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

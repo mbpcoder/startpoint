@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog\Exceptions;
+namespace StartPoint\Exceptions;
 
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;

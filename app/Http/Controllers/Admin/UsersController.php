@@ -1,10 +1,10 @@
 <?php
 
-namespace Blog\Http\Controllers\Admin;
+namespace StartPoint\Http\Controllers\Admin;
 
-use Blog\Http\Controllers\Controller;
-use Blog\Http\Requests;
-use Blog\User;
+use StartPoint\Http\Controllers\Controller;
+use StartPoint\Http\Requests;
+use StartPoint\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller

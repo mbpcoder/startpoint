@@ -7,7 +7,7 @@ class UserTableSeeder extends Seeder {
 
     public function run()
     {
-        \Blog\User::updateOrCreate([
+        \StartPoint\User::updateOrCreate([
             'id' => 1,
             'email' => 'admin@blog.com',
             'name' => 'admin',

@@ -1,8 +1,8 @@
-<?php namespace Blog\Http\Controllers\Admin;
+<?php namespace StartPoint\Http\Controllers\Admin;
 
-use Blog\Comment;
-use Blog\Http\Controllers\Controller;
-use Blog\Http\Requests;
+use StartPoint\Comment;
+use StartPoint\Http\Controllers\Controller;
+use StartPoint\Http\Requests;
 use Illuminate\Http\Request;
 
 class CommentsController extends Controller

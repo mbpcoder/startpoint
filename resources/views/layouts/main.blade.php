@@ -15,8 +15,12 @@
     <script src='{{asset("js/vendors/bootstrap.min.js")}}'></script>
 </head>
 <body>
-@include('includes.header')
-@yield('content')
-@include('includes.footer')
+
+    @include('includes.header')
+
+    @yield('content')
+
+    @include('includes.footer')
+
 </body>
 </html>
