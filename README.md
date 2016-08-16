@@ -1,20 +1,19 @@
-Laravel Blog for developer
+Start Point For Creating Apps with Laravel
 ============
+this is going to be start point for developer and give them some basic infrastructure they need for most of websites. features like authentication, permissions, blog, upload, create static pages, admin interface, notifications, suport systems, newsletter and so on
 
-A Laravel 5.2 blog
-
-## Features
-
-* alias, published, multi category for posts
-* posts pagination
-* alias, published and order for categories
-* Bundled migration for building the database schema
-* powerful admin interface
-* newsletters after creating posts
-*
+## Completed Features
+* Blog
+    * alias, published, multi category for posts
+    * posts pagination
+    * alias, published and order for categories
+    * migration for building the database schema
+* Others
+    * newsletters
+    * powerful admin interface
 
 # install via composer 
-    composer create-project mahdi-bagheri/blog MyBlog
+    composer create-project mahdi-bagheri/blog App
 
 
 # init
