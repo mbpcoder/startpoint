@@ -1,6 +1,6 @@
 Start Point For Creating Apps with Laravel
 ============
-this is going to be start point for developer and give them some basic infrastructure they need for most of websites. features like authentication, permissions, blog, upload, create static pages, admin interface, notifications, suport systems, newsletter and so on
+this is going to be start point for developer and give them some basic infrastructure they need for most of websites. features like authentication, permissions, blog, upload, create static pages, admin interface, notifications, support systems, newsletter and so on
 
 ## Completed Features
 * Blog
