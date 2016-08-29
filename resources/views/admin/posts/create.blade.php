@@ -47,8 +47,14 @@
 
                         <div class="col-lg-8">
                             <select multiple class="form-control" id="categories" name="categories[]">
+                                <?php $first = true ?>
                                 @foreach(\StartPoint\Category::all() as $category)
-                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                    @if($first)
+                                        <?php $first = false; ?>
+                                        <option value="{{$category->id}}" selected>{{$category->name}}</option>
+                                    @else
+                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                    @endif
                                 @endforeach
                             </select>
                         </div>
