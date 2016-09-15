@@ -18,8 +18,8 @@ class CreateTicketsTable extends Migration
             $table->string('name', 80);
             $table->string('email', 50);
             $table->string('title');
-            $table->integer('created_at');
-            $table->integer('tracking_code');
+            $table->timestamp('created_at');
+            $table->string('tracking_code', 30);
             $table->integer('department_id');
             $table->enum('priority', ['low', 'medium', 'high']);
         });

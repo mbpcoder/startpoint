@@ -15,7 +15,7 @@ class CreateDepartmentsTable extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 50);
-            $table->integer('parent');
+            $table->integer('parent_id');
         });
     }
 

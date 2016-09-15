@@ -16,7 +16,7 @@ class CreateMessagesTable extends Migration
             $table->increments('id');
             $table->integer('ticket_id');
             $table->string('body');
-            $table->integer('created_at');
+            $table->timestamp('created_at');
             $table->integer('user_id');
         });
     }

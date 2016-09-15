@@ -17,7 +17,7 @@ class CreateTicketStatusTable extends Migration
             $table->integer('ticket_id');
             $table->enum('status', ['new', 'assigned', 'closed']);
             $table->integer('user_id');
-            $table->integer('created_at');
+            $table->timestamp('created_at');
         });
     }
 
