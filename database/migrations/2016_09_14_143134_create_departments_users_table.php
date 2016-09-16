@@ -16,7 +16,7 @@ class CreateDepartmentsUsersTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('department_id');
-            $table->boolean('manual');
+            $table->boolean('manual')->default(1);
         });
     }
 
