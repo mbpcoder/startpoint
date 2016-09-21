@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->integer('created_at');
             $table->integer('updated_at');
+            $table->boolean('is_admin')->default(0);
         });
     }
 
