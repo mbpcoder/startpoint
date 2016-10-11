@@ -1,11 +1,9 @@
 <?php namespace StartPoint\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use StartPoint\Department;
 use StartPoint\Http\Requests;
 use StartPoint\Http\Controllers\Controller;
-use StartPoint\Post;
 
 class DepartmentsController extends Controller
 {
@@ -45,7 +43,6 @@ class DepartmentsController extends Controller
         $data = $request->all();
         $department->update($data);
         return redirect('/admin/departments');
-
     }
 
     public function destroy($id)

@@ -66,6 +66,15 @@
                     </ul>
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> دپارتمان <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/admin/departments">نمایش</a></li>
+                                <li><a href="/admin/departments/create">ایجاد</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">تیکت<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/admin/newsletter_members">نمایش</a></li>
