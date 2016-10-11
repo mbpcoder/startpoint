@@ -61,6 +61,21 @@ Route::group(['middleware' => ['web']], function () {
                 Route::get('active/{code}', 'NewsletterMembersController@active');
                 Route::get('deactivate/{code}', 'NewsletterMembersController@deactivate');
             });
+            // Tickets
+            Route::group(array('prefix' => 'tickets'), function () {
+                Route::get('/', 'TicketsController@index');
+                Route::get('create', 'TicketsController@create');
+            });
+            // Departments
+            Route::group(array('prefix' => 'departments'), function () {
+                Route::get('/', 'DepartmentsController@index');
+                Route::get('create', 'DepartmentsController@create');
+                Route::post('store', 'DepartmentsController@store');
+                Route::post('grid', 'DepartmentsController@grid');
+                Route::get('{id}/edit', 'DepartmentsController@edit');
+                Route::put('{id}', 'DepartmentsController@update');
+                Route::get('{id}/destroy', 'DepartmentsController@destroy');
+            });
         });
     });
 });
