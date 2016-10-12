@@ -1,54 +1,109 @@
-<?php namespace StartPoint\Http\Controllers\Admin;
+<?php
 
-use Illuminate\Http\Request;
+namespace StartPoint\Http\Controllers\Admin;
+
+use Illuminate\Support\Facades\Redirect;
 use StartPoint\Department;
-use StartPoint\Http\Requests;
+use StartPoint\DepartmentUser;
 use StartPoint\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use StartPoint\User;
 
-class DepartmentsController extends Controller
+class DepartmentsUsersController extends Controller
 {
-    // TODO: Add validation @Abbas Shakiba.
     public function index()
     {
-        return view('admin.departments.index');
+        return view('admin.departments_users.index');
     }
 
     public function create()
     {
-        $formAction = "/admin/departments/store";
-
         $departments = Department::all();
+        $users = User::all();
 
-        return view('admin.departments.create', ['formAction' => $formAction, 'departments' => $departments]);
+        $data = [
+            'users' => $users,
+            'departments' => $departments
+        ];
+
+        return view('admin.departments_users.create', $data);
     }
 
     public function store(Request $request)
     {
         $data = $request->all();
-        Department::create($data);
-        return redirect('/admin/departments');
+        $data['manual'] = 1;
+
+        if ($data['user_id'] == 0 or $data['department_id'] == 0)
+            return Redirect::back()->withErrors(['کاربر و یا دپارتمان انتخاب نشده است']);
+
+        $status = false;
+        if (DepartmentUser::create($data))
+            $status = true;
+        /*
+         * Find department child's
+         */
+        if ($status) {
+            $departments = Department::where('parent_id', $data['department_id'])->get();
+            foreach ($departments as $department) {
+                $child = [
+                    'user_id' => $data['user_id'],
+                    'department_id' => $department->id,
+                    'manual' => 0
+                ];
+                DepartmentUser::create($child);
+            }
+        }
+        return redirect('/admin/departments_users');
     }
 
     public function edit($id)
     {
+        $department = DepartmentUser::find($id);
         $departments = Department::all();
-        $department = Department::find($id);
-        $formAction = "/admin/departments/". $department->id;
+        $users = User::all();
 
-        return view('admin.departments.edit', ['formAction' => $formAction, 'department' => $department, 'departments' => $departments]);
+        $data = [
+            'formAction' => '/admin/departments_users/' . $department->id,
+            'users' => $users,
+            'department' => $department,
+            'departments' => $departments
+        ];
+
+        return view('admin.departments_users.edit', $data);
     }
 
     public function update(Request $request, $id)
     {
-        $department = Department::find($id);
+        $department = DepartmentUser::find($id);
+
+        DepartmentUser::where([
+                ['manual', '=', 0],
+                ['user_id', '=', $department->user_id],
+            ])->delete();
+
         $data = $request->all();
+        $data['manual'] = 1;
+
         $department->update($data);
+        /*
+         * Find department child's
+         */
+        $departments = Department::where('parent_id', $data['department_id'])->get();
+        foreach ($departments as $department) {
+            $child = [
+                'user_id' => $data['user_id'],
+                'department_id' => $department->id,
+                'manual' => 0
+            ];
+            DepartmentUser::create($child);
+        }
         return redirect('/admin/departments');
     }
 
     public function destroy($id)
     {
-        Department::destroy($id);
+        DepartmentUser::destroy($id);
         return redirect()->back();
     }
 
@@ -59,7 +114,8 @@ class DepartmentsController extends Controller
             $perPage = $req->page->perPage;
             $from = $perPage * (($req->page->currentPage) - 1);
 
-            $query = Department::select(['id', 'name', 'parent_id']);
+            $query = DepartmentUser::where('manual', '=', 1);
+
             if (!is_null($req->sort)) {
                 foreach ($req->sort as $key => $value) {
                     $query->orderBy($key, $value);
@@ -95,6 +151,12 @@ class DepartmentsController extends Controller
             $total = $query->count();
             $query->take($perPage)->skip($from);
             $data = $query->get();
+
+            foreach ($data as $item) {
+                $item->user_name = $item->user->name;
+                $item->department_name = $item->department->name;
+            }
+
             $totalPage = ceil($total / $perPage);
 
             $countDataPerPage = count($data);
