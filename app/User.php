@@ -44,4 +44,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('StartPoint\Post');
     }
+
+    public function departments()
+    {
+        return $this->hasMany('StartPoint\DepartmentUser');
+    }
 }

@@ -82,6 +82,15 @@
                             </ul>
                         </li>
                     </ul>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">چارت سازمانی<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/admin/departments_users">نمایش</a></li>
+                                <li><a href="/admin/departments_users/create">ایجاد</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                     <li><a href="/admin/logout">خروج</a></li>
                 @else
                     <li><a href="{{url('/admin/login')}}">ورود</a></li>

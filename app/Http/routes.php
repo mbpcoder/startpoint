@@ -76,6 +76,17 @@ Route::group(['middleware' => ['web']], function () {
                 Route::put('{id}', 'DepartmentsController@update');
                 Route::get('{id}/destroy', 'DepartmentsController@destroy');
             });
+            // Departments Users
+            Route::group(array('prefix' => 'departments_users'), function () {
+                Route::get('/', 'DepartmentsUsersController@index');
+                Route::get('create', 'DepartmentsUsersController@create');
+                Route::post('store', 'DepartmentsUsersController@store');
+                Route::post('grid', 'DepartmentsUsersController@grid');
+                Route::get('{id}/edit', 'DepartmentsUsersController@edit');
+                Route::put('{id}', 'DepartmentsUsersController@update');
+                Route::get('{id}/destroy', 'DepartmentsUsersController@destroy');
+            });
         });
     });
 });
+
