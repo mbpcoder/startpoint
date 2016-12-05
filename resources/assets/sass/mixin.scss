@@ -1,0 +1,14 @@
+@mixin getBox1($height: 65px, $mrgBottom: 15px, $bgColor: #ffffff, $borderAttribute: 1px solid #DDDDDD) {
+  @include borderRadius();
+  height: $height;
+  margin-bottom: $mrgBottom;
+  background: $bgColor;
+  border: $borderAttribute;
+}
+
+@mixin borderRadius($radius: 5px) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}

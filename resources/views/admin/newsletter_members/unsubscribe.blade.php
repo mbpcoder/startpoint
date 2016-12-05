@@ -1,7 +1,9 @@
-<div dir="rtl" style="margin-top: 200px;margin-right:auto;margin-left: auto;width: 300px;">
-
-    <b>
-        ایمیل شما از خبرنامه حذف شد.
-    </b>
-
+<div class="container">
+    <div class="row">
+            <div class="alert alert-info">
+                <strong>
+                    ایمیل شما از خبرنامه حذف شد.
+                </strong>
+            </div>
+    </div>
 </div>
