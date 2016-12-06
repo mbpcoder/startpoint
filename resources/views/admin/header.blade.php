@@ -102,8 +102,8 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="/admin/newsletter_members">نمایش</a></li>
-                                <li><a href="/admin/newsletter_members">ایجاد</a></li>
+                                <li><a href="/admin/tickets">نمایش</a></li>
+                                <li><a href="/admin/tickets/create">ایجاد</a></li>
                             </ul>
                         </li>
                     </ul>
