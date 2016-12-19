@@ -1,7 +1,137 @@
 @font-face {
-  font-family: 'tahoma';
-  src: url("/fonts/tahoma.ttf") format("truetype"); }
-
+  font-family: "Sahel";
+  src: url("../fonts/Sahel.eot");
+  src: url("../fonts/Sahel.eot?#iefix") format("embedded-opentype"), url("../fonts/Sahel.woff") format("woff"), url("../fonts/Sahel.ttf") format("truetype");
+  font-weight: normal; }
+@font-face {
+  font-family: "Shabnam";
+  src: url("../fonts/Shabnam.eot");
+  src: url("../fonts/Shabnam.eot?#iefix") format("embedded-opentype"), url("../fonts/Shabnam.woff") format("woff"), url("../fonts/Shabnam.ttf") format("truetype");
+  font-weight: normal; }
 * {
-  font-family: tahoma,Helvetica,sans-serif,Arial;
+  font-family: Sahel, Shabnam, Tahoma;
   line-height: 200%; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Shabnam, Sahel, Tahoma; }
+
+/***********************************************
+** grid styles
+***********************************************/
+h1 {
+  font-size: 1.5em; }
+
+h2 {
+  font-size: 1.3em; }
+
+h3 {
+  font-size: 1em; }
+
+h4 {
+  font-size: 0.9em; }
+
+h5 {
+  font-size: 0.8em; }
+
+h6 {
+  font-size: 0.7em; }
+
+/***********************************************
+** body styles
+***********************************************/
+body .container {
+  padding-top: -0px; }
+
+.container .page-header {
+  margin: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  height: 65px;
+  margin-bottom: 15px;
+  background: #F8F8F8;
+  border: 1px solid #DDDDDD;
+  padding: 3px 15px; }
+  .container .page-header h2:before {
+    font-family: FontAwesome;
+    content: "\f104";
+    margin-left: 5px; }
+
+/***********************************************
+** grid styles
+***********************************************/
+.gridview .toolbar {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  height: 65px;
+  margin-bottom: 15px;
+  background: #F8F8F8;
+  border: 1px solid #DDDDDD; }
+  .gridview .toolbar button {
+    border: 1px solid #DDDDDD !important;
+    padding-top: 10px; }
+  .gridview .toolbar input[type="button"] {
+    border: 1px solid #DDDDDD !important; }
+  .gridview .toolbar .gridview-toggle-columns, .gridview .toolbar .gridview-waiting {
+    margin: 15px 0 !important; }
+.gridview .grid-caption h2:before {
+  font-family: FontAwesome;
+  content: "\f104";
+  margin-left: 8px; }
+.gridview table tbody tr td:last-child a.view-item:before {
+  font-family: FontAwesome;
+  content: '\f06e';
+  display: inline-block;
+  margin-left: 5px; }
+.gridview table tbody tr td:last-child a.update-item:before {
+  font-family: FontAwesome;
+  content: '\f040';
+  display: inline-block;
+  margin-left: 5px; }
+.gridview table tbody tr td:last-child a.remove-item:before {
+  font-family: FontAwesome;
+  content: '\f00d';
+  display: inline-block;
+  margin-left: 5px; }
+.gridview table tbody tr td:last-child a.active-item:before {
+  font-family: FontAwesome;
+  content: '\f00c';
+  display: inline-block;
+  margin-left: 5px; }
+.gridview table tbody tr td:last-child a.status-item:before, .gridview table tbody tr td:last-child a.inactive-item:before {
+  font-family: FontAwesome;
+  content: '\f023';
+  display: inline-block;
+  margin-left: 5px; }
+.gridview .statusbar {
+  text-align: center; }
+  .gridview .statusbar .pagination {
+    float: none !important;
+    margin: 0 auto; }
+
+/***********************************************
+** form styles
+***********************************************/
+form.form fieldset legend {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  height: 65px;
+  margin-bottom: 20px;
+  background: #F8F8F8;
+  border: 1px solid #DDDDDD;
+  padding: 0px 15px; }
+  form.form fieldset legend h3:before {
+    font-family: FontAwesome;
+    content: "\f104";
+    margin-left: 5px; }
+form.form .form-group label.control-label {
+  text-align: right; }
+form.form .form-group > div {
+  text-align: right; }
+  form.form .form-group > div input[type="radio"].form-control, form.form .form-group > div input[type="checkbox"].form-control {
+    width: 1%; }

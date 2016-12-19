@@ -1,9 +1,17 @@
 @font-face {
-  font-family: 'tahoma';
-  src: url("/fonts/tahoma.ttf") format("truetype");
+  font-family: "Sahel";
+  src: url('../fonts/Sahel.eot');
+  src: url('../fonts/Sahel.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Sahel.woff') format('woff'),
+  url('../fonts/Sahel.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Shabnam";
+  src: url('../fonts/Shabnam.eot');
+  src: url('../fonts/Shabnam.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Shabnam.woff') format('woff'),
+  url('../fonts/Shabnam.ttf') format('truetype');
+  font-weight: normal;
 }
 
-*{
-  font-family: tahoma,Helvetica,sans-serif,Arial;
-  line-height: 200%;
-}

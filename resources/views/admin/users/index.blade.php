@@ -5,35 +5,42 @@
     @endsection
 
 @section('content')
-    @if ( Session::get('message') != NULL )
-        <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <strong>{{ Session::get('message') }}</strong>
-        </div>
-    @endif
 
-    @if ( $errors->count() > 0 )
-        <div class="alert alert-danger alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <p>خطاهای زیر رخ داده است:</p>
-            <ul>
-                @foreach( $errors->all() as $message )
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-
-    <div class="container-fluid full-height">
+    {{--<div class="container-fluid full-height">
         <div class="row full-height">
             <div class="col-lg-10 scroll full-height">
                 <div class="gridviewContainer" id="UserGridview"></div>
             </div>
+        </div>
+    </div>--}}
+
+    <div class="container">
+        <div class="row">
+
+            @if ( Session::get('message') != NULL )
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>{{ Session::get('message') }}</strong>
+                </div>
+            @endif
+
+            @if ( $errors->count() > 0 )
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>خطاهای زیر رخ داده است:</p>
+                    <ul>
+                        @foreach( $errors->all() as $message )
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <div id="UserGridview"></div>
         </div>
     </div>
     <!-- /.container-fluid -->
@@ -43,12 +50,14 @@
             dataSource: '{{URL::to("admin/users/grid")}}',
             emptyMessage: 'No Data',
             styleClass: 'table table-striped',
-            paginatorPosition: 'bottom top',
+            paginatorPosition: 'bottom',
             paginatorVisibility: true,
             autoIncrement: true,
             autoIncrementCaption: '#',
             id: 'UserGridview',
             direction: 'rtl',
+            captionShow: true,
+            captionText: 'لیست کاربران',
             extendData: {
                 "_token": "{{csrf_token()}}",
             }
@@ -179,7 +188,7 @@
             'name': 'action',
             'caption': 'عملیات',
             'type': ['html'],
-            'typeData': '<a href="admin/users/{users.id}/edit" class="btn btn-info btn-xs">ویرایش</a> <a href="admin/users/{users.id}/destroy" class="delete btn btn-danger btn-xs">حذف</a>',
+            'typeData': '<a href="admin/users/{users.id}/edit" class="btn btn-info btn-sm update-item">ویرایش</a> <a href="admin/users/{users.id}/destroy" class="delete btn btn-danger btn-sm remove-item">حذف</a>',
             'visible': true,
             'sort': false,
             'filter': false,

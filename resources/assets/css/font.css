@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'tahoma';
+  src: url("../fonts/tahoma.ttf") format("truetype"); }
+* {
+  font-family: tahoma,Helvetica,sans-serif,Arial;
+  line-height: 200%; }
+
+/*# sourceMappingURL=font.css.map */
