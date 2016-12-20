@@ -137,28 +137,21 @@ body {
 ** form styles
 ***********************************************/
 
-form.form {
-  fieldset {
-    legend {
-      @include getBox1(65px, 20px, $toolbarBgColor, 1px solid #DDDDDD);
-      padding: 0px 15px;
-
-      h3:before {
-        font-family: FontAwesome;
-        content: "\f104";
-        margin-left: 5px;
-      }
-    }
-  }
-  .form-group {
-    label.control-label {
-      text-align: right;
-    }
-    > div {
-      text-align: right;
-      input[type="radio"].form-control,input[type="checkbox"].form-control {
-        width: 1%;
-      }
-    }
-  }
+//form.form {
+//  fieldset {
+//    legend {
+//      @include getBox1(65px, 20px, $toolbarBgColor, 1px solid #DDDDDD);
+//      padding: 0px 15px;
+//
+//      h3:before {
+//        font-family: FontAwesome;
+//        content: "\f104";
+//        margin-left: 5px;
+//      }
+//    }
+//  }
+//}
+.form-group.required .control-label::after{
+  color: #d9534f;
+  content: " *";
 }
