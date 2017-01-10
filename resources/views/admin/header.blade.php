@@ -66,41 +66,9 @@
                     </ul>
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-university"></i>&nbsp;دپارتمان
-                                <span class="caret"></span>
+                            <a href="/admin/tickets" class=>
+                                <i class="fa fa-ticket"></i>&nbsp;سیستم پشتیبانی
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/admin/departments">نمایش</a></li>
-                                <li><a href="/admin/departments/create">ایجاد</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-ticket"></i>&nbsp;تیکت
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/admin/tickets">نمایش</a></li>
-                                <li><a href="/admin/tickets/create">ایجاد</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-area-chart"></i>&nbsp;چارت سازمانی
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/admin/departments_users">نمایش</a></li>
-                                <li><a href="/admin/departments_users/create">ایجاد</a></li>
-                            </ul>
                         </li>
                     </ul>
                     <li><a href="/admin/logout"><i class="fa fa-sign-out"></i>&nbsp;خروج</a></li>
