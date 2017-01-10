@@ -61,62 +61,90 @@ body .container {
 /***********************************************
 ** grid styles
 ***********************************************/
-.gridview .toolbar {
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  height: 65px;
-  margin-bottom: 15px;
-  background: #F8F8F8;
-  border: 1px solid #DDDDDD; }
-  .gridview .toolbar button {
-    border: 1px solid #DDDDDD !important;
-    padding-top: 10px; }
-  .gridview .toolbar input[type="button"] {
-    border: 1px solid #DDDDDD !important; }
-  .gridview .toolbar .gridview-toggle-columns, .gridview .toolbar .gridview-waiting {
-    margin: 15px 0 !important; }
+/*.gridview {
+  // Grid toolbar
+  .toolbar {
+    @include getBox1(65px, 15px, $toolbarBgColor, 1px solid #DDDDDD);
 
-.gridview .grid-caption h2:before {
-  font-family: FontAwesome;
-  content: "\f104";
-  margin-left: 8px; }
+    button {
+      border: $border1 !important;;
+      padding-top: 10px;
+    }
 
-.gridview table tbody tr td:last-child a.view-item:before {
-  font-family: FontAwesome;
-  content: '\f06e';
-  display: inline-block;
-  margin-left: 5px; }
+    input[type="button"] {
+      border: $border1 !important;
+    }
 
-.gridview table tbody tr td:last-child a.update-item:before {
-  font-family: FontAwesome;
-  content: '\f040';
-  display: inline-block;
-  margin-left: 5px; }
+    .gridview-toggle-columns, .gridview-waiting {
+      margin: 15px 0 !important;
+    }
+  }
+  //  Grid caption
+  .grid-caption  {
+    h2:before {
+      font-family: FontAwesome;
+      content: "\f104";
+      margin-left: 8px;
+    }
 
-.gridview table tbody tr td:last-child a.remove-item:before {
-  font-family: FontAwesome;
-  content: '\f00d';
-  display: inline-block;
-  margin-left: 5px; }
+  }
 
-.gridview table tbody tr td:last-child a.active-item:before {
-  font-family: FontAwesome;
-  content: '\f00c';
-  display: inline-block;
-  margin-left: 5px; }
+  // grid action links
+  table tbody tr td:last-child {
+    a.view-item {
+      &:before {
+        font-family: FontAwesome;
+        content: '\f06e';
+        display: inline-block;
+        margin-left: 5px;
+      }
+    }
 
-.gridview table tbody tr td:last-child a.status-item:before, .gridview table tbody tr td:last-child a.inactive-item:before {
-  font-family: FontAwesome;
-  content: '\f023';
-  display: inline-block;
-  margin-left: 5px; }
+    a.update-item {
+      &:before {
+        font-family: FontAwesome;
+        content: '\f040';
+        display: inline-block;
+        margin-left: 5px;
+      }
+    }
 
-.gridview .statusbar {
-  text-align: center; }
-  .gridview .statusbar .pagination {
-    float: none !important;
-    margin: 0 auto; }
+    a.remove-item {
+      &:before {
+        font-family: FontAwesome;
+        content: '\f00d';
+        display: inline-block;
+        margin-left: 5px;
+      }
+    }
 
+    a.active-item {
+      &:before {
+        font-family: FontAwesome;
+        content: '\f00c';
+        display: inline-block;
+        margin-left: 5px;
+      }
+    }
+
+    a.status-item,a.inactive-item {
+      &:before {
+        font-family: FontAwesome;
+        content: '\f023';
+        display: inline-block;
+        margin-left: 5px;
+      }
+    }
+  }
+  // Grid footer
+  .statusbar {
+    text-align: center;
+    .pagination {
+      float: none !important;
+      margin: 0 auto;
+    }
+  }
+}*/
 /***********************************************
 ** form styles
 ***********************************************/

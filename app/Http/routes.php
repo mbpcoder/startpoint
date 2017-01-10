@@ -64,28 +64,20 @@ Route::group(['middleware' => ['web']], function () {
             // Tickets
             Route::group(array('prefix' => 'tickets'), function () {
                 Route::get('/', 'TicketsController@index');
+                Route::post('grid', 'TicketsController@grid');
                 Route::get('create', 'TicketsController@create');
             });
-            // Departments
-            Route::group(array('prefix' => 'departments'), function () {
-                Route::get('/', 'DepartmentsController@index');
-                Route::get('create', 'DepartmentsController@create');
-                Route::post('store', 'DepartmentsController@store');
-                Route::post('grid', 'DepartmentsController@grid');
-                Route::get('{id}/edit', 'DepartmentsController@edit');
-                Route::put('{id}', 'DepartmentsController@update');
-                Route::get('{id}/destroy', 'DepartmentsController@destroy');
+            // Ticket Categories
+            Route::group(array('prefix' => 'ticket-categories'), function () {
+                Route::get('/', 'TicketCategoriesController@index');
+                Route::post('grid', 'TicketCategoriesController@grid');
+                Route::get('create', 'TicketCategoriesController@create');
+                Route::post('/', 'TicketCategoriesController@store');
+                Route::get('{id}/edit', 'TicketCategoriesController@edit');
+                Route::put('{id}', 'TicketCategoriesController@update');
+                Route::get('{id}/destroy', 'TicketCategoriesController@destroy');
             });
-            // Departments Users
-            Route::group(array('prefix' => 'departments_users'), function () {
-                Route::get('/', 'DepartmentsUsersController@index');
-                Route::get('create', 'DepartmentsUsersController@create');
-                Route::post('store', 'DepartmentsUsersController@store');
-                Route::post('grid', 'DepartmentsUsersController@grid');
-                Route::get('{id}/edit', 'DepartmentsUsersController@edit');
-                Route::put('{id}', 'DepartmentsUsersController@update');
-                Route::get('{id}/destroy', 'DepartmentsUsersController@destroy');
-            });
+
         });
     });
 });
