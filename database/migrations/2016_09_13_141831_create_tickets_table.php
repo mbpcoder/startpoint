@@ -15,13 +15,11 @@ class CreateTicketsTable extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('name', 80);
-            $table->string('email', 50);
+            $table->integer('ticket_category_id');
             $table->string('title');
-            $table->timestamp('created_at');
+            $table->text('body');
             $table->string('tracking_code', 32);
-            $table->integer('department_id');
-            $table->enum('priority', ['low', 'medium', 'high']);
+            $table->integer('created_at');
         });
     }
 
