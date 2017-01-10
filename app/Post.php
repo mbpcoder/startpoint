@@ -13,7 +13,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Post extends Model
 {
-
     protected $table = 'posts';
 
     protected $fillable = ['body', 'title', 'published', 'alias', 'user_id'];
@@ -21,7 +20,6 @@ class Post extends Model
     protected $dateFormat = 'U';
 
     protected $dates = [];
-
 
     public function getCreatedAtAttribute($date)
     {
@@ -31,12 +29,10 @@ class Post extends Model
         return (string)$date;
     }
 
-
     public function setFirstNameAttribute($value)
     {
         $this->attributes['first_name'] = strtolower($value);
     }
-
 
     public function user()
     {

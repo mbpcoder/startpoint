@@ -66,9 +66,17 @@
                     </ul>
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="/admin/tickets" class=>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-ticket"></i>&nbsp;سیستم پشتیبانی
+                                <span class="caret"></span>
                             </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/admin/tickets">لیست تیکت‌ها</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/admin/ticket-categories">لیست دسته بندی تیکت‌ها</a></li>
+                                <li><a href="/admin/ticket-categories/create">ایجاد دسته تیکت جدید</a></li>
+                            </ul>
                         </li>
                     </ul>
                     <li><a href="/admin/logout"><i class="fa fa-sign-out"></i>&nbsp;خروج</a></li>
