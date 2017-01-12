@@ -44,20 +44,6 @@ h6 {
 body .container {
   padding-top: -0px; }
 
-.container .page-header {
-  margin: 0;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  height: 65px;
-  margin-bottom: 15px;
-  background: #F8F8F8;
-  border: 1px solid #DDDDDD;
-  padding: 3px 15px; }
-  .container .page-header h2:before {
-    font-family: FontAwesome;
-    content: "\f104";
-    margin-left: 5px; }
-
 /***********************************************
 ** grid styles
 ***********************************************/
