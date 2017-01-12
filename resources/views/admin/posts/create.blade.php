@@ -62,7 +62,7 @@
 
                 <div class="form-group required {{$errors->has('body') ? 'has-error' : ''}}">
                     <label class="control-label" for="Body">محتوی</label>
-                    <textarea type="text" class="form-control" id="Body" name="" rows="20">{{old('body')}}</textarea>
+                    <textarea type="text" class="form-control" id="Body" name="body" rows="20">{{old('body')}}</textarea>
                     @if($errors->has('body'))
                         <span class="help-block">{{$errors->first('body')}}</span>
                     @endif
