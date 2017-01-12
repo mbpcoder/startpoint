@@ -31,7 +31,12 @@
                             <label for="published" class="control-label col-md-3">منتشر شده</label>
 
                             <div class="col-md-7">
-                                <input type="checkbox" class="checkbox-inline" id="published" name="published">
+                                @if(old('published'))
+                                    <input checked type="checkbox" class="checkbox-inline" id="published" name="published">
+                                @else
+                                    <input type="checkbox" class="checkbox-inline" id="published" name="published">
+                                @endif
+
                             </div>
                         </div>
                         <div class="form-group">

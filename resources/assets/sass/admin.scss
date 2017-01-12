@@ -32,16 +32,16 @@ body {
     padding-top: -0px;
   }
 }
-.container .page-header {
-  margin: 0;
-  @include getBox1(65px, 15px, $toolbarBgColor, 1px solid #DDDDDD);
-  padding: 3px 15px;
-  h2:before {
-    font-family: FontAwesome;
-    content: "\f104";
-    margin-left: 5px;
-  }
-}
+//.container .page-header {
+//  margin: 0;
+//  @include getBox1(65px, 15px, $toolbarBgColor, 1px solid #DDDDDD);
+//  padding: 3px 15px;
+//  h2:before {
+//    font-family: FontAwesome;
+//    content: "\f104";
+//    margin-left: 5px;
+//  }
+//}
 
 
 /***********************************************
