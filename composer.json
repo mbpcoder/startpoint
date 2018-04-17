@@ -1,9 +1,17 @@
 {
-    "name": "laravel/laravel",
+    "name": "mb-programmer/startpoint",
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
-    "type": "project",
+    "authors": [
+        {
+            "name": "Mahdi Bagheri",
+            "email": "mb.programmer@yahoo.com",
+            "homepage": "http://www.reckless.ir",
+            "role": "Owner Developer"
+        }
+    ],
+    "type": "project",    
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",

@@ -1,11 +1,29 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
+<<<<<<< HEAD
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
+=======
+## Completed Features
+* Blog
+    * alias, published, multi category for posts
+    * posts pagination
+    * alias, published and order for categories
+    * migration for building the database schema
+    * powerful admin interface
+* Newsletters
+    * send newsletter
+    * newsletters list
+    * add or remove newsletters member    
+* Tickets
+   * tickets list
+   * tickets categories   
+   * unlimited answers
+>>>>>>> origin/master
 
 ## About Laravel
 
