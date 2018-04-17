@@ -49,7 +49,7 @@ class PostsController extends Controller
         $post = Post::find($id);
         return view('admin.posts.edit')->with([
             'post' => $post,
-            'categories_post' => CategoryPost::wherePostId($post->id)->lists('category_id')->toArray(),
+            'categories_post' => CategoryPost::wherePostId($post->id)->pluck('category_id')->toArray(),
         ]);
     }
 
