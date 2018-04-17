@@ -8,7 +8,6 @@
     <link href="/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href='{{asset("css/vendors/bootstrap.min.css")}}'/>
     <link rel="stylesheet" href='{{asset("css/vendors/bootstrap-rtl.min.css")}}'/>
-    <link rel="stylesheet" href='{{asset("css/app.css")}}'/>
 
 
     <script src='{{asset("js/vendors/jquery.min.js")}}'></script>

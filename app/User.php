@@ -2,16 +2,12 @@
 
 namespace StartPoint;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-	/**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'users';
+    use Notifiable;
 
     protected $dateFormat = 'U';
 
@@ -21,7 +17,7 @@ class User extends Authenticatable
     {
         return $this->dates;
     }
-	
+
     /**
      * The attributes that are mass assignable.
      *
@@ -32,14 +28,14 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes excluded from the model's JSON form.
+     * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
         'password', 'remember_token',
     ];
-	
+
 	public function posts()
     {
         return $this->hasMany('StartPoint\Post');

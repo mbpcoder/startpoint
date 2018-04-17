@@ -12,7 +12,6 @@
     </style>
     <div class="container">
         <div class="row">
-
             <div class="sidebar col-md-4">
                 <div class="section logo">
                     <img class="img-circle" src="/img/logo.png" alt="logo">
@@ -36,7 +35,6 @@
                     <!-- /.row -->
                 </div>
             </div>
-
             <div class="col-md-8">
 
                 @foreach($posts as $post)
@@ -134,7 +132,6 @@
                 </script>
 
             </div>
-
         </div>
     </div>
 @endsection

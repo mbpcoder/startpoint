@@ -3,7 +3,6 @@
 namespace StartPoint\Http\Controllers;
 
 use StartPoint\Category;
-use StartPoint\Http\Requests;
 use StartPoint\Post;
 
 class HomeController extends Controller
