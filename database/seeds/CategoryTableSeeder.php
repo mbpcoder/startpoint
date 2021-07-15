@@ -9,6 +9,7 @@ class CategoryTableSeeder extends Seeder
         \StartPoint\Category::updateOrCreate([
             'id' => 1,
             'name' => 'بدون دسته',
+            'alias' => 'بدون دسته',
             'published' => false,
             'user_id' => 1,
         ]);
