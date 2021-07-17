@@ -90,6 +90,11 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
             Route::get('{id}/destroy', 'TicketCategoriesController@destroy');
         });
 
+        Route::get('logout', function () {
+         auth()->logout();
+         return redirect('/');
+        });
+
     });
 });
 
