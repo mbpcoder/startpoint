@@ -13,3 +13,10 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+/public/fonts/vendor/vazir-dist
+
+/public/css/new-admin.css
+/public/js/new-admin.js
+
+/public/css/app.css
+/public/js/app.js
