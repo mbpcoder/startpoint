@@ -1,8 +1,8 @@
 <?php namespace App\Http\Controllers\Admin;
 
 
-use StartPoint\Http\Controllers\Controller;
-use StartPoint\Newsletter;
+use App\Http\Controllers\Controller;
+use App\Newsletter;
 use Illuminate\Http\Request;
 
 class NewslettersController extends Controller

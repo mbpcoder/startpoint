@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
-use StartPoint\Http\Requests;
-use StartPoint\Http\Controllers\Controller;
-use StartPoint\TicketCategory;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use App\TicketCategory;
 
 class TicketCategoriesController extends Controller
 {

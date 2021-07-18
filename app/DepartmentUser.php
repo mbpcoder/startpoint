@@ -14,11 +14,11 @@ class DepartmentUser extends Model
 
     public function user()
     {
-        return $this->belongsTo('StartPoint\User');
+        return $this->belongsTo('App\User');
     }
 
     public function department()
     {
-        return $this->belongsTo('StartPoint\Department');
+        return $this->belongsTo('App\Department');
     }
 }

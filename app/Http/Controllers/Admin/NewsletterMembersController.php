@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use StartPoint\Http\Controllers\Controller;
-use StartPoint\NewsletterMember;
+use App\Http\Controllers\Controller;
+use App\NewsletterMember;
 use Illuminate\Http\Request;
 use Input as Input;
 use Redirect as Redirect;

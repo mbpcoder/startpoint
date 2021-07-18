@@ -1,8 +1,8 @@
 <?php namespace App\Http\Controllers\Admin;
 
-use StartPoint\Comment;
-use StartPoint\Http\Controllers\Controller;
-use StartPoint\Http\Requests;
+use App\Comment;
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
 use Illuminate\Http\Request;
 
 class CommentsController extends Controller

@@ -7,7 +7,7 @@ class UserTableSeeder extends Seeder {
 
     public function run()
     {
-        \StartPoint\User::updateOrCreate([
+        \App\User::updateOrCreate([
             'id' => 1
         ],[
             'id' => 1,

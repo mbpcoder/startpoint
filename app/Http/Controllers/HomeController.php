@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use StartPoint\Category;
-use StartPoint\Post;
+use App\Category;
+use App\Post;
 
 class HomeController extends Controller
 {

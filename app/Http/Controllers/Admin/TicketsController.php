@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use StartPoint\Http\Controllers\Controller;
-use StartPoint\Ticket;
+use App\Http\Controllers\Controller;
+use App\Ticket;
 
 
 class TicketsController extends Controller

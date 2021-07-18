@@ -38,11 +38,11 @@ class User extends Authenticatable
 
 	public function posts()
     {
-        return $this->hasMany('StartPoint\Post');
+        return $this->hasMany('App\Post');
     }
 
     public function departments()
     {
-        return $this->hasMany('StartPoint\DepartmentUser');
+        return $this->hasMany('App\DepartmentUser');
     }
 }

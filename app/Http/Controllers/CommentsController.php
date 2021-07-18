@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
-use StartPoint\Http\Requests;
-use StartPoint\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class CommentsController extends Controller

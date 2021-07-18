@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use StartPoint\Http\Controllers\Controller;
-use StartPoint\Http\Requests;
-use StartPoint\User;
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller

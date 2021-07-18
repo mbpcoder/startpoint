@@ -1,6 +1,6 @@
 <?php namespace StartPoint;
 
-use StartPoint\Lib\PasoonDate;
+use App\Lib\PasoonDate;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
@@ -21,6 +21,6 @@ class Comment extends Model
 
     public function post()
     {
-        return $this->belongsTo('StartPoint\Post');
+        return $this->belongsTo('App\Post');
     }
 }

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use StartPoint\Category;
-use StartPoint\Http\Controllers\Controller;
-use StartPoint\Http\Requests;
+use App\Category;
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

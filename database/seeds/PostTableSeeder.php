@@ -7,7 +7,7 @@ class PostTableSeeder extends Seeder {
 
     public function run()
     {
-        \StartPoint\Post::updateOrCreate([
+        \App\Post::updateOrCreate([
             'id' => 1,
             'title' => 'test',
             'alias' => 'test',
@@ -15,7 +15,7 @@ class PostTableSeeder extends Seeder {
             'user_id' => 1,
         ]);
 
-        \StartPoint\Post::updateOrCreate([
+        \App\Post::updateOrCreate([
             'id' => 2,
             'title' => 'test2',
             'alias' => 'test2',

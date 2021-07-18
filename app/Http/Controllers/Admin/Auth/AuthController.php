@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin\Auth;
 
-use StartPoint\User;
+use App\User;
 use Validator;
-use StartPoint\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

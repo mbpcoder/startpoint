@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="">
-                                @foreach(\StartPoint\Category::wherePublished(true)->get() as $category)
+                                @foreach(\App\Category::wherePublished(true)->get() as $category)
                                     <li>
                                         <a href="{{$category->alias}}">{{$category->name}}</a>
                                     </li>

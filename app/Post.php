@@ -1,6 +1,6 @@
 <?php namespace StartPoint;
 
-use StartPoint\Lib\PasoonDate;
+use App\Lib\PasoonDate;
 use Illuminate\Database\Eloquent\Model;
 
 
@@ -36,16 +36,16 @@ class Post extends Model
 
     public function user()
     {
-        return $this->belongsTo('StartPoint\User');
+        return $this->belongsTo('App\User');
     }
 
     public function comments()
     {
-        return $this->hasMany('StartPoint\Comment');
+        return $this->hasMany('App\Comment');
     }
 
     public function categories()
     {
-        return $this->belongsToMany('StartPoint\Category', 'category_post');
+        return $this->belongsToMany('App\Category', 'category_post');
     }
 }

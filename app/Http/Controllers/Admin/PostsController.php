@@ -1,8 +1,8 @@
 <?php namespace App\Http\Controllers\Admin;
 
-use StartPoint\CategoryPost;
-use StartPoint\Http\Controllers\Controller;
-use StartPoint\Post;
+use App\CategoryPost;
+use App\Http\Controllers\Controller;
+use App\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
