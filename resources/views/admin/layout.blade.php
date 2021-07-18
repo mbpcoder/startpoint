@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{$pageTitle or 'مدیریت وبلاگ'}}</title>
+    <title>{{$pageTitle ?? 'مدیریت وبلاگ'}}</title>
     <link rel="stylesheet" href='{{asset("css/vendors/bootstrap.min.css")}}'/>
     <link rel="stylesheet" href='{{asset("css/vendors/bootstrap-rtl.min.css")}}'/>
     <link rel="stylesheet" href='{{asset("css/vendors/font-awesome.min.css")}}'/>
