@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->boolean('is_admin')->default(0);
             $table->integer('created_at');
             $table->integer('updated_at');
+            $table->morphs('taggable');
         });
     }
 
