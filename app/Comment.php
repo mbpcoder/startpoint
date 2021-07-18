@@ -1,4 +1,4 @@
-<?php namespace StartPoint;
+<?php namespace App;
 
 use App\Lib\PasoonDate;
 use Illuminate\Database\Eloquent\Model;
