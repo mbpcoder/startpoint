@@ -11,26 +11,26 @@
             "role": "Owner Developer"
         }
     ],
-    "type": "project",    
+    "type": "project",
     "require": {
-        "php": ">=7.2.0",
+        "php": ">=7.3.0",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "^6.0",
+        "laravel/framework": "^8.0",
         "laravel/helpers": "^1.4",
-        "laravel/tinker": "~1.0"
+        "laravel/legacy-factories": "^1.1",
+        "laravel/tinker": "^2.0",
+        "laravel/ui": "^3.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
         "mockery/mockery": "~1.0",
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ],
         "psr-4": {
-            "StartPoint\\": "app/"
+            "StartPoint\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {

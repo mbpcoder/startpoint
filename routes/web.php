@@ -1,15 +1,7 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Illuminate\Support\Facades\Route;
+use \Illuminate\Support\Facades\Auth;
 
 // web
 Route::get('posts/show/{id}', 'PostsController@show');
@@ -18,7 +10,9 @@ Route::get('/{category?}', 'HomeController@index')->where('category', '^(?!admin
 
 // admin
 Route::namespace('Admin')->prefix('admin')->group(function () {
-    Route::auth();
+
+    Auth::routes();
+
     // only Authenticate user
     Route::group(['middleware' => ['admin_auth:admin']], function () {
 
@@ -91,11 +85,8 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
         });
 
         Route::get('logout', function () {
-         auth()->logout();
-         return redirect('/');
+            auth()->logout();
+            return redirect('/');
         });
-
     });
 });
-
-//Auth::routes();
