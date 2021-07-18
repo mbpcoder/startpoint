@@ -1,7 +1,10 @@
 <?php
+
 namespace App\Exceptions;
-use Throwable;
+
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Throwable;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -19,25 +22,20 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontFlash = [
+        'current_password',
         'password',
         'password_confirmation',
     ];
 
     /**
-     * Report or log an exception.
+     * Register the exception handling callbacks for the application.
      *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
-     *
-     * @param  \Exception  $exception
      * @return void
      */
-    // use Throwable - you should NOT import Throwable class as a trait here. You need to just import it above the class
-    public function report(Throwable $exception)
+    public function register()
     {
-        parent::report($exception);
-    }
-    public function render($request, Throwable $exception)
-    {
-        return parent::render($request, $exception);
+        $this->reportable(function (Throwable $e) {
+            //
+        });
     }
 }

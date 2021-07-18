@@ -15,7 +15,7 @@ class AdminAuthenticate
     /**
      * Create a new filter instance.
      *
-     * @param  Guard $auth
+     * @param Guard $auth
      */
     public function __construct(Guard $auth)
     {
@@ -25,8 +25,8 @@ class AdminAuthenticate
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Closure                 $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -34,9 +34,8 @@ class AdminAuthenticate
         if ($this->auth->guest()) {
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
-            } else {
-                return redirect()->guest('admin/login');
             }
+            return redirect()->guest('login');
         }
         return $next($request);
     }

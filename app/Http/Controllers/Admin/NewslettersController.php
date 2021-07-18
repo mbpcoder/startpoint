@@ -2,7 +2,7 @@
 
 
 use App\Http\Controllers\Controller;
-use App\Newsletter;
+use App\Models\Newsletter;
 use Illuminate\Http\Request;
 
 class NewslettersController extends Controller

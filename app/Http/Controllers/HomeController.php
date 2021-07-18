@@ -2,26 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Post;
+use App\Models\Category;
+use App\Models\Post;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Show the application dashboard.
-     *
-     * @param null $category_alias
-     * @return \Illuminate\Http\Response
-     */
-    public function index($category_alias = null)
+    public function index($categorySlug = null)
     {
-        if (is_null($category_alias) || empty($category_alias) || $category_alias == '/') {
-            $posts = Post::wherePublished(true)->orderBy('created_at', 'desc')->paginate(10);
-        } else {
-            // get category posts
-            $category = Category::whereAlias($category_alias)->get()->first();
-            $posts = $category->posts()->wherePublished(true)->paginate(10);
+        $query = Post::query()->whereNotNull('published_at')->orderBy('created_at', 'desc');
+        if (!is_null($categorySlug) && !empty($categorySlug) && $categorySlug !== '/') {
+            $category = Category::query()->where('slug', $categorySlug)->first();
+            if (is_null($category)) {
+                abort(404);
+            }
+            $query->where('category_id', $category->id);
         }
-        return view('index')->with('posts', $posts);
+        $posts = $query->with('author')->paginate(10);
+
+        $categories = Category::query()->where('disabled', false)->get();
+
+        return view('index')->with([
+            'posts' => $posts,
+            'categories' => $categories
+        ]);
     }
 }

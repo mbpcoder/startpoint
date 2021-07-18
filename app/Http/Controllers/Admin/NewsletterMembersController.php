@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\NewsletterMember;
+use App\Models\NewsletterMember;
 use Illuminate\Http\Request;
 use Input as Input;
 use Redirect as Redirect;

@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Post;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller

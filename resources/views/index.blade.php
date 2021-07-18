@@ -1,29 +1,16 @@
 @extends('layouts.main')
 
 @section('content')
-    <style>
-        .logo{
-            text-align: center;
-        }
-        .sidebar .section{
-            padding: 19px;
-            margin-bottom: 20px;
-        }
-    </style>
     <div class="container">
         <div class="row">
             <div class="sidebar col-md-4">
-                <div class="section logo">
-                    <img class="img-circle" src="/img/logo.png" alt="logo">
-                </div>
-
                 <div class="section">
                     <h4>دسته بندی مطالب</h4>
 
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="">
-                                @foreach(\App\Category::wherePublished(true)->get() as $category)
+                                @foreach($categories as $category)
                                     <li>
                                         <a href="{{$category->alias}}">{{$category->name}}</a>
                                     </li>
@@ -44,7 +31,7 @@
                         </h3>
 
                         <p class="">
-                            <a href="index.php">{{$post->user->name}}</a> <span class="glyphicon glyphicon-time"></span> {{$post->created_at}}
+                            <a href="/">{{$post->author->name}}</a> <span class="glyphicon glyphicon-time"></span> {{$post->created_at}}
                         </p>
 
                         <hr>
