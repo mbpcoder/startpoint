@@ -1,4 +1,4 @@
-<?php namespace StartPoint\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
 use StartPoint\Http\Requests;
 use StartPoint\Http\Controllers\Controller;

@@ -1,6 +1,6 @@
 <?php
 
-namespace StartPoint\Http\Controllers\Admin\Auth;
+namespace App\Http\Controllers\Admin\Auth;
 
 use StartPoint\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;

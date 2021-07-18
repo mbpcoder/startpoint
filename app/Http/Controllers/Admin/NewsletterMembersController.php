@@ -1,6 +1,6 @@
 <?php
 
-namespace StartPoint\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
 use StartPoint\Http\Controllers\Controller;
 use StartPoint\NewsletterMember;

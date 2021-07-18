@@ -1,6 +1,6 @@
 <?php
 
-namespace StartPoint\Http\Controllers;
+namespace App\Http\Controllers;
 
 use StartPoint\Category;
 use StartPoint\Post;

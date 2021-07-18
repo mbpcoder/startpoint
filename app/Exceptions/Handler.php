@@ -1,5 +1,5 @@
 <?php
-namespace StartPoint\Exceptions;
+namespace App\Exceptions;
 use Throwable;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 class Handler extends ExceptionHandler

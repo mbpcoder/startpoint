@@ -1,4 +1,4 @@
-<?php namespace StartPoint\Http\Controllers\Admin\Auth;
+<?php namespace App\Http\Controllers\Admin\Auth;
 
 use StartPoint\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;

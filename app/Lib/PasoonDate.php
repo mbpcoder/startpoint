@@ -1,4 +1,4 @@
-<?php namespace StartPoint\Lib;
+<?php namespace App\Lib;
 class PasoonDate
 {
     private $_5f4e58f21878 = 2440587.5;
