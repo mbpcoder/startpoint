@@ -3,23 +3,30 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'posts';
 
     protected $fillable = [
         'author_id',
         'category_id',
         'title',
+        'slug',
         'summery',
         'body',
         'meta_description',
         'keywords',
         'comment_count',
         'visit_count',
-        'slug',
-        'published_at'
+        'published_at',
+    ];
+
+    protected $casts = [
+        'published_at' => 'datetime',
     ];
 
     public function author()
@@ -27,13 +34,13 @@ class Post extends Model
         return $this->belongsTo(User::class, 'author_id');
     }
 
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
-
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }
