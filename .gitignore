@@ -20,3 +20,6 @@ yarn-error.log
 
 /public/css/app.css
 /public/js/app.js
+/public/js/filament
+/public/fonts/filament
+/public/css/filament
