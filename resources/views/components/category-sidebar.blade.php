@@ -3,14 +3,14 @@
 {{-- Search --}}
 <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
     <h3 class="font-semibold text-gray-900 text-sm uppercase tracking-wide mb-3 pb-2 border-b border-gray-100">
-        جستجو
+        {{ __('Search') }}
     </h3>
-    <form method="GET" action="{{ route('search') }}">
+    <form method="GET" action="{{ lroute('search') }}">
         <div class="flex gap-2">
             <input type="text"
                    name="q"
                    value="{{ request('q') }}"
-                   placeholder="جستجو در مطالب..."
+                   placeholder="{{ __('Search in posts...') }}"
                    class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
             <button type="submit"
                     class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-2 rounded-lg text-sm transition">
@@ -25,19 +25,19 @@
 {{-- Categories --}}
 <div class="bg-white rounded-xl shadow-sm p-5 mb-4">
     <h3 class="font-semibold text-gray-900 text-sm uppercase tracking-wide mb-3 pb-2 border-b border-gray-100">
-        دسته‌بندی‌ها
+        {{ __('Categories') }}
     </h3>
     <ul class="space-y-1.5">
         <li>
-            <a href="/"
-               class="{{ request()->is('/') && !request()->segment(1) ? 'text-indigo-600 font-medium' : 'text-gray-600 hover:text-indigo-600' }} text-sm transition block py-0.5">
-                همه مطالب
+            <a href="{{ lroute('home') }}"
+               class="{{ clean_path() === '/' ? 'text-indigo-600 font-medium' : 'text-gray-600 hover:text-indigo-600' }} text-sm transition block py-0.5">
+                {{ __('All Posts') }}
             </a>
         </li>
         @foreach($categories as $category)
             <li>
-                <a href="/{{ $category->slug }}"
-                   class="{{ request()->segment(1) === $category->slug ? 'text-indigo-600 font-medium' : 'text-gray-600 hover:text-indigo-600' }} text-sm transition block py-0.5">
+                <a href="{{ lroute('home', ['category' => $category->slug]) }}"
+                   class="{{ clean_path() === '/' . $category->slug ? 'text-indigo-600 font-medium' : 'text-gray-600 hover:text-indigo-600' }} text-sm transition block py-0.5">
                     {{ $category->name }}
                 </a>
             </li>
@@ -48,9 +48,9 @@
 {{-- Newsletter --}}
 <div class="bg-indigo-50 rounded-xl shadow-sm p-5">
     <h3 class="font-semibold text-gray-900 text-sm uppercase tracking-wide mb-1 pb-2 border-b border-indigo-100">
-        خبرنامه
+        {{ __('Newsletter') }}
     </h3>
-    <p class="text-xs text-gray-500 mb-3">برای دریافت جدیدترین مطالب عضو شوید.</p>
+    <p class="text-xs text-gray-500 mb-3">{{ __('Subscribe to receive latest posts.') }}</p>
 
     @if(session('newsletter_success'))
         <div class="bg-green-50 border border-green-200 text-green-700 rounded-lg px-3 py-2 text-xs mb-3">
@@ -58,12 +58,12 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('newsletter.subscribe') }}">
+    <form method="POST" action="{{ lroute('newsletter.subscribe') }}">
         @csrf
         <input type="email"
                name="email"
                value="{{ old('email') }}"
-               placeholder="ایمیل شما"
+               placeholder="{{ __('Your email') }}"
                required
                class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm mb-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent @error('email') border-red-400 @enderror">
         @error('email')
@@ -71,7 +71,7 @@
         @enderror
         <button type="submit"
                 class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg text-sm font-medium transition">
-            عضویت
+            {{ __('Subscribe') }}
         </button>
     </form>
 </div>

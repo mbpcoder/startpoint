@@ -1,5 +1,6 @@
+@php use App\Enums\Language; $lang = Language::tryFrom(app()->getLocale()) ?? Language::FA; @endphp
 <!DOCTYPE html>
-<html dir="rtl" lang="fa" class="h-full">
+<html dir="{{ $lang->direction() }}" lang="{{ app()->getLocale() }}" class="h-full">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,14 +11,17 @@
 <body class="min-h-full bg-gray-100 font-sans text-gray-800 antialiased flex flex-col">
 
     <header class="bg-indigo-700 text-white shadow-md">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="/" class="text-xl font-bold tracking-tight hover:text-indigo-100 transition">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+            <a href="{{ lroute('home') }}" class="text-xl font-bold tracking-tight hover:text-indigo-100 transition">
                 {{ config('app.name', 'وبلاگ') }}
             </a>
-            <nav class="flex items-center gap-5 text-sm">
-                <a href="{{ route('login') }}" class="text-indigo-200 hover:text-white transition">ورود</a>
-                <a href="{{ route('register') }}" class="bg-white text-indigo-700 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-indigo-50 transition">ثبت‌نام</a>
-            </nav>
+            <div class="flex items-center gap-4">
+                <x-language-switcher />
+                <nav class="flex items-center gap-4 text-sm">
+                    <a href="{{ route('login') }}" class="text-indigo-200 hover:text-white transition">{{ __('Login') }}</a>
+                    <a href="{{ route('register') }}" class="bg-white text-indigo-700 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-indigo-50 transition">{{ __('Register') }}</a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -27,7 +31,7 @@
 
     <footer class="border-t border-gray-200">
         <div class="max-w-6xl mx-auto px-4 py-4 text-center text-sm text-gray-400">
-            استفاده با ذکر منبع بلامانع است.
+            {{ __('Free to use with attribution.') }}
         </div>
     </footer>
 
