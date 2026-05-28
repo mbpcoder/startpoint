@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Category extends Model
+class TicketCategory extends Model
 {
     use SoftDeletes;
-
-    protected $table = 'categories';
 
     protected $fillable = [
         'name',
@@ -22,8 +20,8 @@ class Category extends Model
         'disabled' => 'boolean',
     ];
 
-    public function posts()
+    public function tickets()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Ticket::class);
     }
 }
