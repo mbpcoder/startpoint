@@ -68,6 +68,9 @@ class PostResource extends Resource
                     ->label('Published')
                     ->boolean()
                     ->getStateUsing(fn(Post $record): bool => ! is_null($record->published_at)),
+                Tables\Columns\TextColumn::make('visit_count')
+                    ->label('بازدید')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable(),

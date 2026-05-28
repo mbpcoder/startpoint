@@ -43,4 +43,10 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function getReadingTimeAttribute(): int
+    {
+        $words = count(preg_split('/\s+/u', trim(strip_tags($this->body ?? '')), -1, PREG_SPLIT_NO_EMPTY));
+        return max(1, (int) ceil($words / 200));
+    }
 }

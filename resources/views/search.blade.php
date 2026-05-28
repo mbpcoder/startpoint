@@ -1,12 +1,28 @@
 @extends('layouts.main')
 
-@section('title', config('app.name', 'وبلاگ'))
+@section('title', $q ? 'جستجو: ' . $q . ' | ' . config('app.name') : 'جستجو | ' . config('app.name'))
 
 @section('content')
 
+    <div class="mb-6">
+        <h1 class="text-xl font-bold text-gray-800">
+            @if($q)
+                نتایج جستجو برای: <span class="text-indigo-600">{{ $q }}</span>
+            @else
+                جستجو
+            @endif
+        </h1>
+        @if($q)
+            <p class="text-sm text-gray-400 mt-1">{{ $posts->total() }} نتیجه یافت شد</p>
+        @endif
+    </div>
+
     @if($posts->isEmpty())
-        <div class="text-center py-16 text-gray-400">
-            <p class="text-lg">مطلبی یافت نشد.</p>
+        <div class="bg-white rounded-xl shadow-sm p-12 text-center text-gray-400">
+            <p class="text-lg">نتیجه‌ای یافت نشد.</p>
+            @if($q)
+                <p class="text-sm mt-2">عبارت دیگری جستجو کنید.</p>
+            @endif
         </div>
     @endif
 
