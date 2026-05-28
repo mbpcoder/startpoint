@@ -22,6 +22,8 @@
                 <span>&middot;</span>
             @endif
             <span>{{ $post->created_at->format('Y/m/d') }}</span>
+            <span>&middot;</span>
+            <span>{{ $post->reading_time }} دقیقه مطالعه</span>
         </div>
 
         <div class="prose prose-gray max-w-none leading-loose text-gray-700">
@@ -29,6 +31,28 @@
         </div>
 
     </article>
+
+    {{-- Related posts --}}
+    @if($related->isNotEmpty())
+    <section class="bg-white rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-lg font-semibold text-gray-800 mb-5">مطالب مرتبط</h2>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            @foreach($related as $rel)
+                <a href="{{ route('posts.show', $rel->id) }}"
+                   class="block border border-gray-100 rounded-lg p-4 hover:border-indigo-200 hover:bg-indigo-50 transition">
+                    <h3 class="font-medium text-gray-800 text-sm mb-1 line-clamp-2">{{ $rel->title }}</h3>
+                    <div class="flex items-center gap-2 text-xs text-gray-400">
+                        @if($rel->author)
+                            <span>{{ $rel->author->name }}</span>
+                            <span>&middot;</span>
+                        @endif
+                        <span>{{ $rel->published_at->format('Y/m/d') }}</span>
+                    </div>
+                </a>
+            @endforeach
+        </div>
+    </section>
+    @endif
 
     {{-- Comments --}}
     @php $approvedComments = $post->comments->where('approved', true); @endphp
