@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --font-family-sans: 'Vazir', Tahoma, Arial, sans-serif;
+}
 
 @layer base {
     @font-face {
