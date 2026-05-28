@@ -14,11 +14,11 @@ use Illuminate\Support\Str;
 class TicketCategoryResource extends Resource
 {
     protected static ?string $model = TicketCategory::class;
-    protected static ?string $navigationIcon = 'heroicon-o-folder';
-    protected static ?string $navigationGroup = 'Support';
+    protected static string|null|\BackedEnum $navigationIcon = 'heroicon-o-folder';
+    protected static string|null|\UnitEnum $navigationGroup = 'Support';
     protected static ?int $navigationSort = 2;
 
-    public static function form(Form $form): Form
+    public static function form(Form|\Filament\Schemas\Schema $form): \Filament\Schemas\Schema
     {
         return $form->schema([
             Forms\Components\Section::make()->schema([

@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Hash;
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
-    protected static ?string $navigationIcon = 'heroicon-o-users';
-    protected static ?string $navigationGroup = 'Management';
+    protected static string|null|\BackedEnum $navigationIcon = 'heroicon-o-users';
+    protected static string|null|\UnitEnum $navigationGroup = 'Management';
     protected static ?int $navigationSort = 1;
 
-    public static function form(Form $form): Form
+    public static function form(Form|\Filament\Schemas\Schema $form): \Filament\Schemas\Schema
     {
         return $form->schema([
             Forms\Components\Section::make()->schema([

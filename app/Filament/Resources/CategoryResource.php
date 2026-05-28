@@ -14,11 +14,11 @@ use Illuminate\Support\Str;
 class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
-    protected static ?string $navigationIcon = 'heroicon-o-tag';
-    protected static ?string $navigationGroup = 'Content';
+    protected static string|null|\BackedEnum $navigationIcon = 'heroicon-o-tag';
+    protected static string|null|\UnitEnum $navigationGroup = 'Content';
     protected static ?int $navigationSort = 2;
 
-    public static function form(Form $form): Form
+    public static function form(Form|\Filament\Schemas\Schema $form): \Filament\Schemas\Schema
     {
         return $form->schema([
             Forms\Components\Section::make()->schema([

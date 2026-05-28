@@ -13,11 +13,11 @@ use Filament\Tables\Table;
 class NewsletterResource extends Resource
 {
     protected static ?string $model = Newsletter::class;
-    protected static ?string $navigationIcon = 'heroicon-o-envelope';
-    protected static ?string $navigationGroup = 'Management';
+    protected static string|null|\BackedEnum $navigationIcon = 'heroicon-o-envelope';
+    protected static string|null|\UnitEnum $navigationGroup = 'Management';
     protected static ?int $navigationSort = 2;
 
-    public static function form(Form $form): Form
+    public static function form(Form|\Filament\Schemas\Schema $form): \Filament\Schemas\Schema
     {
         return $form->schema([
             Forms\Components\Section::make()->schema([
