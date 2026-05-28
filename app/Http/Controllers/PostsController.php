@@ -1,26 +1,21 @@
-<?php namespace App\Http\Controllers;
+<?php
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers;
+
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
     public function show($id)
     {
-        $post = Post::find($id);
-        $title = $post->title;
-       return view('posts.show')->with([
-            'title' => $title,
-            'post' => $post,
-        ]);
+        $post = Post::with(['author', 'category', 'comments' => function ($q) {
+            $q->where('approved', true)->orderBy('created_at', 'asc');
+        }])->findOrFail($id);
+
+        $categories = Category::where('disabled', false)->orderBy('order')->get();
+
+        return view('posts.show', compact('post', 'categories'));
     }
 }
