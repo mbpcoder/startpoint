@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'تأیید ایمیل | ' . config('app.name'))
+@section('title', __('Verify Your Email Address') . ' | ' . config('app.name'))
 
 @section('content')
 <div class="w-full max-w-md">
@@ -13,25 +13,23 @@
             </svg>
         </div>
 
-        <h2 class="text-xl font-bold text-gray-900 mb-2">ایمیل خود را تأیید کنید</h2>
+        <h2 class="text-xl font-bold text-gray-900 mb-2">{{ __('Verify Your Email Address') }}</h2>
 
         @if(session('resent'))
             <div class="bg-green-50 border border-green-200 text-green-700 rounded-lg px-4 py-3 mb-5 text-sm">
-                لینک تأیید جدید به آدرس ایمیل شما ارسال شد.
+                {{ __('A fresh verification link has been sent to your email address.') }}
             </div>
         @endif
 
         <p class="text-gray-500 text-sm mb-6 leading-relaxed">
-            پیش از ادامه، لطفاً ایمیل خود را بررسی کنید و روی لینک تأیید کلیک کنید.
-            <br>
-            اگر ایمیل را دریافت نکرده‌اید،
+            {{ __('Before proceeding, please check your email for a verification link.') }}
         </p>
 
         <form method="POST" action="{{ route('verification.resend') }}">
             @csrf
             <button type="submit"
                     class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition">
-                ارسال مجدد لینک تأیید
+                {{ __('Resend Verification Email') }}
             </button>
         </form>
 

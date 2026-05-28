@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\SetLocale;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\PreventRequestsDuringMaintenance;
 use App\Http\Middleware\RedirectIfAuthenticated;
@@ -64,6 +65,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'signed'           => ValidateSignature::class,
             'throttle'         => ThrottleRequests::class,
             'verified'         => EnsureEmailIsVerified::class,
+            'setLocale'        => SetLocale::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

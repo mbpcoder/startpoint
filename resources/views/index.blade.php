@@ -6,7 +6,7 @@
 
     @if($posts->isEmpty())
         <div class="text-center py-16 text-gray-400">
-            <p class="text-lg">مطلبی یافت نشد.</p>
+            <p class="text-lg">{{ __('No posts found.') }}</p>
         </div>
     @endif
 
@@ -14,7 +14,7 @@
         <article class="bg-white rounded-xl shadow-sm p-6 mb-6 hover:shadow-md transition">
 
             <h2 class="text-xl font-bold mb-2">
-                <a href="{{ route('posts.show', $post->id) }}"
+                <a href="{{ lroute('posts.show', $post->id) }}"
                    class="text-gray-900 hover:text-indigo-600 transition">
                     {{ $post->title }}
                 </a>
@@ -26,7 +26,7 @@
                     <span>&middot;</span>
                 @endif
                 @if($post->category)
-                    <a href="/{{ $post->category->slug }}"
+                    <a href="{{ lroute('home', ['category' => $post->category->slug]) }}"
                        class="text-indigo-500 hover:text-indigo-700 transition">
                         {{ $post->category->name }}
                     </a>
@@ -34,7 +34,7 @@
                 @endif
                 <span>{{ $post->created_at->format('Y/m/d') }}</span>
                 <span>&middot;</span>
-                <span>{{ $post->reading_time }} دقیقه مطالعه</span>
+                <span>{{ __(':count min read', ['count' => $post->reading_time]) }}</span>
             </div>
 
             @if($post->summery)
@@ -45,9 +45,9 @@
                 </p>
             @endif
 
-            <a href="{{ route('posts.show', $post->id) }}"
+            <a href="{{ lroute('posts.show', $post->id) }}"
                class="inline-block text-sm text-indigo-600 hover:text-indigo-800 font-medium transition">
-                ادامه مطلب &laquo;
+                {{ __('Read more') }} &laquo;
             </a>
 
         </article>

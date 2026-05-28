@@ -10,15 +10,14 @@ enum Language: string
     case EN = 'en';
     case AR = 'ar';
 
-
-    public static function enableLanguages(): array
+    public static function enabledLanguages(): array
     {
         return [
-            self::EN,
             self::FA,
+            self::EN,
+            self::AR,
         ];
     }
-
 
     public static function rtlLanguages(): array
     {
@@ -27,5 +26,23 @@ enum Language: string
             self::AR,
         ];
     }
-}
 
+    public function isRtl(): bool
+    {
+        return in_array($this, self::rtlLanguages());
+    }
+
+    public function direction(): string
+    {
+        return $this->isRtl() ? 'rtl' : 'ltr';
+    }
+
+    public function label(): string
+    {
+        return match($this) {
+            self::FA => 'فارسی',
+            self::EN => 'English',
+            self::AR => 'العربية',
+        };
+    }
+}
