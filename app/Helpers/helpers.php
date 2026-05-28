@@ -10,7 +10,7 @@ if (!function_exists('lroute')) {
     function lroute(string $name, mixed $parameters = [], bool $absolute = true): string
     {
         $locale  = app()->getLocale();
-        $default = config('app.locale', 'fa');
+        $default = config('app.locale');
 
         if ($locale === $default) {
             return route($name, $parameters, $absolute);
@@ -31,7 +31,7 @@ if (!function_exists('lroute')) {
 if (!function_exists('locale_path')) {
     function locale_path(string $targetLocale): string
     {
-        $default = config('app.locale', 'fa');
+        $default = config('app.locale');
         $path    = '/' . ltrim(request()->path(), '/');
         $locales = array_map(fn($l) => $l->value, Language::enabledLanguages());
 

@@ -26,7 +26,7 @@ class SetLocale
 
     private function resolveLocale(Request $request): string
     {
-        $default  = config('app.locale', 'fa');
+        $default  = config('app.locale');
         $enabled  = array_map(fn($l) => $l->value, Language::enabledLanguages());
 
         // 1. URL prefix takes highest priority

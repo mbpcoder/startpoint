@@ -31,11 +31,11 @@ Route::middleware('setLocale')->group(function () {
     Route::post('password/confirm', [ConfirmPasswordController::class, 'confirm']);
 });
 
-// ── Public routes — default locale (fa), no URL prefix ──
+// ── Public routes — default locale (no URL prefix) ──
 Route::middleware('setLocale')->group(base_path('routes/public.php'));
 
 // ── Public routes — non-default locales, with URL + name prefix ──
-$defaultLocale = config('app.locale', 'fa');
+$defaultLocale = config('app.locale');
 
 foreach (Language::enabledLanguages() as $lang) {
     if ($lang->value !== $defaultLocale) {
