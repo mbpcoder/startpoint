@@ -11,8 +11,8 @@ use Filament\Tables\Table;
 class TicketResource extends Resource
 {
     protected static ?string $model = Ticket::class;
-    protected static ?string $navigationIcon = 'heroicon-o-ticket';
-    protected static ?string $navigationGroup = 'Support';
+    protected static string|null|\BackedEnum $navigationIcon = 'heroicon-o-ticket';
+    protected static string|null|\UnitEnum $navigationGroup = 'Support';
     protected static ?int $navigationSort = 1;
 
     public static function table(Table $table): Table

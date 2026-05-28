@@ -11,8 +11,8 @@ use Filament\Tables\Table;
 class CommentResource extends Resource
 {
     protected static ?string $model = Comment::class;
-    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left-right';
-    protected static ?string $navigationGroup = 'Content';
+    protected static string|null|\BackedEnum $navigationIcon = 'heroicon-o-chat-bubble-left-right';
+    protected static string|null|\UnitEnum $navigationGroup = 'Content';
     protected static ?int $navigationSort = 3;
 
     public static function table(Table $table): Table

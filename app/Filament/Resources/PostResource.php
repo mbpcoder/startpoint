@@ -13,11 +13,11 @@ use Filament\Tables\Table;
 class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
-    protected static ?string $navigationGroup = 'Content';
+    protected static string|null|\BackedEnum $navigationIcon = 'heroicon-o-document-text';
+    protected static string|null|\UnitEnum $navigationGroup = 'Content';
     protected static ?int $navigationSort = 1;
 
-    public static function form(Form $form): Form
+    public static function form(Form|\Filament\Schemas\Schema $form): \Filament\Schemas\Schema
     {
         return $form->schema([
             Forms\Components\Section::make()->schema([
