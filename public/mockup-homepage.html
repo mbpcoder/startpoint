@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homepage Mockup</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  @font-face {
+    font-family: 'Vazir';
+    src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir.woff2') format('woff2');
+    font-weight: normal;
+  }
+  @font-face {
+    font-family: 'Vazir';
+    src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir-Bold.woff2') format('woff2');
+    font-weight: bold;
+  }
+  * { font-family: 'Vazir', Tahoma, sans-serif; }
+</style>
+<script>
+  tailwind.config = {
+    theme: { extend: { fontFamily: { sans: ['Vazir','Tahoma','sans-serif'] } } }
+  }
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- ═══════════════════════════════════════════════════════════
+     OPTION A — Hero + 3-col grid
+     ═══════════════════════════════════════════════════════════ -->
+<div class="border-4 border-blue-400 mb-12">
+  <div class="bg-blue-100 text-blue-800 text-xs font-bold px-4 py-1 tracking-widest">گزینه A — Hero + شبکه پست‌ها</div>
+
+  <!-- Header -->
+  <header class="bg-indigo-700 text-white px-6 py-3 flex items-center justify-between">
+    <span class="font-bold text-lg">نام وبلاگ</span>
+    <nav class="flex gap-5 text-sm">
+      <a href="#" class="hover:text-indigo-200">خانه</a>
+      <a href="#" class="hover:text-indigo-200">درباره</a>
+      <a href="#" class="hover:text-indigo-200">ورود</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-indigo-700 to-indigo-500 text-white px-6 py-14 text-center">
+    <h1 class="text-3xl font-bold mb-3">به وبلاگ ما خوش آمدید</h1>
+    <p class="text-indigo-200 mb-6 text-sm">آخرین مطالب در حوزه‌های مختلف را اینجا بخوانید</p>
+    <div class="max-w-md mx-auto flex gap-2">
+      <input type="text" placeholder="جستجو در مطالب..." class="flex-1 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none">
+      <button class="bg-white text-indigo-700 font-medium px-5 py-2.5 rounded-lg text-sm">جستجو</button>
+    </div>
+    <!-- Category chips -->
+    <div class="flex flex-wrap justify-center gap-2 mt-6">
+      <a href="#" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs px-4 py-1.5 rounded-full">برنامه‌نویسی</a>
+      <a href="#" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs px-4 py-1.5 rounded-full">طراحی</a>
+      <a href="#" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs px-4 py-1.5 rounded-full">کسب‌وکار</a>
+      <a href="#" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs px-4 py-1.5 rounded-full">لایف‌استایل</a>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <div class="bg-white border-b border-gray-100 px-6 py-3 flex gap-8 justify-center text-sm text-gray-500">
+    <span><strong class="text-gray-900">۴۸</strong> مطلب</span>
+    <span><strong class="text-gray-900">۶</strong> دسته‌بندی</span>
+    <span><strong class="text-gray-900">۱۲۰</strong> عضو خبرنامه</span>
+  </div>
+
+  <!-- Post grid -->
+  <main class="max-w-5xl mx-auto px-6 py-8">
+    <h2 class="text-lg font-bold text-gray-700 mb-5">جدیدترین مطالب</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- card -->
+      <article class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+        <div class="bg-indigo-100 h-36 flex items-center justify-center text-indigo-300 text-4xl">📝</div>
+        <div class="p-4">
+          <span class="text-xs bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full">برنامه‌نویسی</span>
+          <h3 class="font-bold text-gray-900 mt-2 mb-1 text-sm leading-relaxed">عنوان مطلب اول که ممکن است دو خط باشد</h3>
+          <div class="flex items-center gap-2 text-xs text-gray-400">
+            <span>علی رضایی</span>
+            <span>·</span>
+            <span>۱۴۰۳/۱/۱۵</span>
+            <span>·</span>
+            <span>۳ دقیقه</span>
+          </div>
+        </div>
+      </article>
+      <article class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+        <div class="bg-emerald-100 h-36 flex items-center justify-center text-emerald-300 text-4xl">🎨</div>
+        <div class="p-4">
+          <span class="text-xs bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded-full">طراحی</span>
+          <h3 class="font-bold text-gray-900 mt-2 mb-1 text-sm leading-relaxed">اصول طراحی رابط کاربری</h3>
+          <div class="flex items-center gap-2 text-xs text-gray-400">
+            <span>سارا احمدی</span>
+            <span>·</span>
+            <span>۱۴۰۳/۱/۱۰</span>
+            <span>·</span>
+            <span>۵ دقیقه</span>
+          </div>
+        </div>
+      </article>
+      <article class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+        <div class="bg-amber-100 h-36 flex items-center justify-center text-amber-300 text-4xl">💼</div>
+        <div class="p-4">
+          <span class="text-xs bg-amber-50 text-amber-600 px-2 py-0.5 rounded-full">کسب‌وکار</span>
+          <h3 class="font-bold text-gray-900 mt-2 mb-1 text-sm leading-relaxed">چطور استارتاپ خود را رشد دهید</h3>
+          <div class="flex items-center gap-2 text-xs text-gray-400">
+            <span>مهدی کریمی</span>
+            <span>·</span>
+            <span>۱۴۰۳/۱/۵</span>
+            <span>·</span>
+            <span>۷ دقیقه</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     OPTION B — Featured hero post + smaller cards
+     ═══════════════════════════════════════════════════════════ -->
+<div class="border-4 border-green-400 mb-12">
+  <div class="bg-green-100 text-green-800 text-xs font-bold px-4 py-1 tracking-widest">گزینه B — مطلب ویژه بزرگ + کارت‌های کوچک‌تر</div>
+
+  <header class="bg-gray-900 text-white px-6 py-3 flex items-center justify-between">
+    <span class="font-bold text-lg">نام وبلاگ</span>
+    <nav class="flex gap-5 text-sm opacity-80">
+      <a href="#">خانه</a><a href="#">آرشیو</a><a href="#">درباره</a><a href="#">ورود</a>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-8">
+    <!-- Category tabs -->
+    <div class="flex gap-1 mb-6 border-b border-gray-200 pb-1">
+      <button class="px-4 py-1.5 text-sm font-medium text-white bg-indigo-600 rounded-t-lg">همه</button>
+      <button class="px-4 py-1.5 text-sm text-gray-500 hover:text-gray-900">برنامه‌نویسی</button>
+      <button class="px-4 py-1.5 text-sm text-gray-500 hover:text-gray-900">طراحی</button>
+      <button class="px-4 py-1.5 text-sm text-gray-500 hover:text-gray-900">کسب‌وکار</button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <!-- Featured (spans 2 cols) -->
+      <article class="lg:col-span-2 bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+        <div class="bg-gradient-to-br from-indigo-500 to-purple-600 h-56 flex items-center justify-center text-white text-5xl">✨</div>
+        <div class="p-5">
+          <span class="text-xs bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full">ویژه</span>
+          <h2 class="text-xl font-bold text-gray-900 mt-3 mb-2 leading-relaxed">مطلب ویژه: عنوان مهم و جذاب که توجه را جلب کند</h2>
+          <p class="text-sm text-gray-500 leading-relaxed mb-4">خلاصه‌ای از این مطلب که به خواننده نشان می‌دهد چرا باید آن را بخواند. این متن می‌تواند چند جمله باشد.</p>
+          <div class="flex items-center gap-2 text-xs text-gray-400">
+            <span>علی رضایی</span><span>·</span><span>۱۴۰۳/۱/۱۵</span><span>·</span><span>۸ دقیقه مطالعه</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sidebar list -->
+      <div class="space-y-4">
+        <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wide">مطالب اخیر</h3>
+        <article class="bg-white rounded-xl shadow-sm p-4 hover:shadow-md transition flex gap-3">
+          <div class="bg-emerald-100 rounded-lg w-14 h-14 flex-shrink-0 flex items-center justify-center text-2xl">🎨</div>
+          <div>
+            <h4 class="text-sm font-medium text-gray-900 leading-snug mb-1">اصول طراحی رابط کاربری</h4>
+            <span class="text-xs text-gray-400">۵ دقیقه · طراحی</span>
+          </div>
+        </article>
+        <article class="bg-white rounded-xl shadow-sm p-4 hover:shadow-md transition flex gap-3">
+          <div class="bg-amber-100 rounded-lg w-14 h-14 flex-shrink-0 flex items-center justify-center text-2xl">💼</div>
+          <div>
+            <h4 class="text-sm font-medium text-gray-900 leading-snug mb-1">چطور استارتاپ خود را رشد دهید</h4>
+            <span class="text-xs text-gray-400">۷ دقیقه · کسب‌وکار</span>
+          </div>
+        </article>
+        <article class="bg-white rounded-xl shadow-sm p-4 hover:shadow-md transition flex gap-3">
+          <div class="bg-rose-100 rounded-lg w-14 h-14 flex-shrink-0 flex items-center justify-center text-2xl">🚀</div>
+          <div>
+            <h4 class="text-sm font-medium text-gray-900 leading-snug mb-1">راهنمای کامل دپلوی Laravel</h4>
+            <span class="text-xs text-gray-400">۱۰ دقیقه · برنامه‌نویسی</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     OPTION C — Minimal list / editorial
+     ═══════════════════════════════════════════════════════════ -->
+<div class="border-4 border-orange-400 mb-12">
+  <div class="bg-orange-100 text-orange-800 text-xs font-bold px-4 py-1 tracking-widest">گزینه C — سبک ادیتوریال / مینیمال</div>
+
+  <header class="bg-white border-b border-gray-200 px-8 py-4 flex items-center justify-between">
+    <div>
+      <span class="font-bold text-xl text-gray-900">نام وبلاگ</span>
+      <span class="text-gray-400 text-sm mr-3">مطالب روز در دنیای فناوری</span>
+    </div>
+    <nav class="flex gap-6 text-sm text-gray-500">
+      <a href="#" class="hover:text-gray-900">خانه</a>
+      <a href="#" class="hover:text-gray-900">آرشیو</a>
+      <a href="#" class="font-medium text-indigo-600">عضویت</a>
+    </nav>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-6 py-10">
+    <article class="mb-8 pb-8 border-b border-gray-100 group">
+      <div class="flex items-center gap-2 text-xs text-gray-400 mb-2">
+        <span class="text-indigo-600 font-medium">برنامه‌نویسی</span>
+        <span>·</span><span>۱۴۰۳/۱/۱۵</span><span>·</span><span>۸ دقیقه مطالعه</span>
+      </div>
+      <h2 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition mb-2 leading-relaxed">
+        عنوان مطلب اول: چیزی مهم که باید بدانید
+      </h2>
+      <p class="text-gray-500 text-sm leading-relaxed">خلاصه‌ای کوتاه از محتوای مطلب که کاربر را ترغیب به خواندن کامل متن کند. این جمله باید جذاب و مختصر باشد.</p>
+    </article>
+
+    <article class="mb-8 pb-8 border-b border-gray-100 group">
+      <div class="flex items-center gap-2 text-xs text-gray-400 mb-2">
+        <span class="text-emerald-600 font-medium">طراحی</span>
+        <span>·</span><span>۱۴۰۳/۱/۱۰</span><span>·</span><span>۵ دقیقه مطالعه</span>
+      </div>
+      <h2 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition mb-2 leading-relaxed">
+        اصول طراحی که هر توسعه‌دهنده‌ای باید بداند
+      </h2>
+      <p class="text-gray-500 text-sm leading-relaxed">درک اصول پایه‌ای طراحی به شما کمک می‌کند محصولات بهتری بسازید حتی اگر طراح نباشید.</p>
+    </article>
+
+    <article class="mb-8 pb-8 border-b border-gray-100 group">
+      <div class="flex items-center gap-2 text-xs text-gray-400 mb-2">
+        <span class="text-amber-600 font-medium">کسب‌وکار</span>
+        <span>·</span><span>۱۴۰۳/۱/۵</span><span>·</span><span>۷ دقیقه مطالعه</span>
+      </div>
+      <h2 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition mb-2 leading-relaxed">
+        چطور استارتاپ خود را از صفر رشد دهید
+      </h2>
+      <p class="text-gray-500 text-sm leading-relaxed">تجربه‌های عملی از کار با تیم‌های کوچک و استراتژی‌هایی که واقعاً جواب می‌دهند.</p>
+    </article>
+  </main>
+</div>
+
+<!-- legend -->
+<div class="max-w-3xl mx-auto px-6 pb-12 text-center text-sm text-gray-400">
+  این فایل فقط یک موکاپ استاتیک است — هیچ کدی در Laravel تغییر نکرده.<br>
+  پس از انتخاب گزینه مورد نظر، پیاده‌سازی انجام می‌شود.
+</div>
+
+</body>
+</html>
