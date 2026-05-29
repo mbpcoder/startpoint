@@ -204,12 +204,6 @@ The `lroute('posts.show', $id)` helper automatically picks the right named route
 
 ---
 
-## Marketing Keywords
-
-*Multilingual blog platform · RTL blog engine · Persian blog CMS · Farsi content management system · Arabic website Laravel · Laravel RTL · Laravel multilingual · Laravel 13 blog · Filament admin panel · Tailwind CSS blog · Laravel blog starter · Laravel CMS open source · SEO-friendly blog · Laravel support ticket system · helpdesk Laravel · newsletter Laravel · Laravel blog boilerplate · modern PHP blog · Laravel starter kit · RTL LTR auto-switch · Persian web application · Middle East web platform · blog engine PHP*
-
----
-
 ## Roadmap
 
 - [ ] Tag-based filtering and tag pages
